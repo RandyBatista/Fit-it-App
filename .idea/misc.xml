@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/activity_main.xml" value="0.2546875" />
-        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/get_measures_frag.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/getm_frag.xml" value="0.2962287104622871" />
-        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/log_in_fragment.xml" value="0.24456521739130435" />
-        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/specify_size_fragment.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hoj2/StudioProjects/Fit-it-App/app/src/main/res/layout/activity_main.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/hoj2/StudioProjects/Fit-it-App/app/src/main/res/layout/get_measures_frag.xml" value="0.33" />
+        <entry key="..\:/Users/hoj2/StudioProjects/Fit-it-App/app/src/main/res/layout/log_in_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/hoj2/StudioProjects/Fit-it-App/app/src/main/res/layout/specify_size_fragment.xml" value="0.19166666666666668" />
       </map>
     </option>
   </component>

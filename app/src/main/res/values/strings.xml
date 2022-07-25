@@ -2,4 +2,13 @@
     <string name="app_name">Fit_It_App</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="register">Register</string>
+    <string name="guess_login">Guess LogIn</string>
+    <string name="login_as_guest">Login as Guest</string>
+    <string name="get_measurements">Get Measurements</string>
+    <string name="fit_it_app">Fit It App</string>
+    <string name="log_in">Log In</string>
+    <string name="i_know_my_measurements">I Know My Measurements</string>
+    <string name="i_know_my_size">I know My Size</string>
 </resources>

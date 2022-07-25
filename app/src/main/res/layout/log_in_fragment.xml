@@ -2,73 +2,102 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fit It App"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="38dp" />
+        android:text="@string/fit_it_app"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="500dp"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/header_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="116dp" />
+        android:text="@string/log_in"
+        app:layout_constraintTop_toBottomOf="@id/title_TV"
+        app:layout_constraintStart_toStartOf="@id/title_TV"
+        app:layout_constraintEnd_toEndOf="@id/title_TV"
+        android:layout_marginTop="30dp"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/Email_ET"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintTop_toBottomOf="@id/header_TV"
+        app:layout_constraintStart_toStartOf="@id/header_TV"
+        app:layout_constraintEnd_toEndOf="@id/header_TV"
+        android:layout_marginTop="10dp"
+        android:autofillHints="" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/password_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Passwords"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="276dp" />
+        android:text="@string/password"
+        app:layout_constraintTop_toBottomOf="@id/Email_ET"
+        app:layout_constraintStart_toStartOf="@id/Email_ET"
+        app:layout_constraintEnd_toEndOf="@id/Email_ET"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"/>
 
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/password_ET"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:ems="10"
-        android:hint="@string/username"
+        android:hint="@string/password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="323dp" />
+        app:layout_constraintTop_toBottomOf="@id/password_TV"
+        app:layout_constraintStart_toStartOf="@id/password_TV"
+        app:layout_constraintEnd_toEndOf="@id/password_TV"
+        android:layout_marginTop="10dp"
+        android:autofillHints="" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/submit_btn"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="404dp" />
+        android:text="@string/submit"
+        app:layout_constraintTop_toBottomOf="@id/password_ET"
+        app:layout_constraintStart_toStartOf="@id/password_ET"
+        app:layout_constraintEnd_toEndOf="@id/password_ET"
+        android:layout_marginTop="50dp"
+        android:radius="200dp"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/register_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="675dp" />
+        android:text="@string/register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/guest_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guess LogIn"
-        tools:layout_editor_absoluteX="313dp"
-        tools:layout_editor_absoluteY="675dp" />
+        android:text="@string/login_as_guest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
