@@ -1,36 +1,39 @@
 package edu.wit.mobileapp.fit_it_app;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class LoginFragment extends Fragment {
+public class RegisterFragment extends Fragment {
 
     EditText emailET;
     EditText passwordET;
+    EditText confirmET;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.log_in_fragment, container, false);
-
         emailET = rootView.findViewById(R.id.Email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
-        Button registerBtn = rootView.findViewById(R.id.register_btn);
+        confirmET = rootView.findViewById(R.id.confirmPassword_ET);
+        Button loginBtn = rootView.findViewById(R.id.login_btn);
         Button guestBtn = rootView.findViewById(R.id.guest_btn);
         Button submitBtn = rootView.findViewById(R.id.submit_btn);
 
-        registerBtn.setOnClickListener(v -> {
+        loginBtn.setOnClickListener(v -> {
             FragmentManager fm = getActivity().getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-            Fragment fragment = new RegisterFragment();
+            Fragment fragment = new LoginFragment();
             transaction.replace(R.id.content, fragment);
             transaction.commit();
         });
@@ -46,16 +49,26 @@ public class LoginFragment extends Fragment {
         });
 
         submitBtn.setOnClickListener(v -> {
-
-//            FragmentManager fm = getActivity().getSupportFragmentManager();
-//            FragmentTransaction transaction = fm.beginTransaction();
-//            //TODO:Login
-//            //TODO:Check if logged in
-//
-//            //Continue if logged in
-//            Fragment fragment = new Fragment();
-//            transaction.replace(R.id.content, fragment);
-//            transaction.commit();
+            Context context = requireContext();
+            String email = emailET.getText().toString();
+            String password = passwordET.getText().toString();
+            if(password.equals(confirmET.getText().toString())){
+                User u = new User(password, new Profile());
+                boolean logged = User.addUser(email, u);
+                if(logged){
+                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    Fragment fragment = new LoginFragment();
+                    transaction.replace(R.id.content, fragment);
+                    transaction.commit();
+                }else{
+                    Toast toast = Toast.makeText(context, "Email already in use.", 3);
+                    toast.show();
+                }
+            }else{
+                Toast toast = Toast.makeText(context, "Passwords do not match.", 3);
+                toast.show();
+            }
         });
         return rootView;
     }

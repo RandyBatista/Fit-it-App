@@ -4,4 +4,5 @@ public class Profile {
 
     //TODO: Put measurement variables here
 
+    public Profile(){}
 }

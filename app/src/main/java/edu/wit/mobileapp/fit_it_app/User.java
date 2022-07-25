@@ -31,7 +31,7 @@ public class User {
         }return false;
     }
 
-    private static boolean addUser(String email, User u){
+    public static boolean addUser(String email, User u){
         if (users.containsKey(email)){
             return false;
         }else{
