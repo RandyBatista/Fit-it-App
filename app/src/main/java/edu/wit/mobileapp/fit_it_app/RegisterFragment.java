@@ -23,9 +23,11 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.log_in_fragment, container, false);
+
         emailET = rootView.findViewById(R.id.Email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
+
         Button loginBtn = rootView.findViewById(R.id.login_btn);
         Button guestBtn = rootView.findViewById(R.id.guest_btn);
         Button submitBtn = rootView.findViewById(R.id.submit_btn);
@@ -36,6 +38,7 @@ public class RegisterFragment extends Fragment {
             Fragment fragment = new LoginFragment();
             transaction.replace(R.id.content, fragment);
             transaction.commit();
+
         });
 
         guestBtn.setOnClickListener(v -> {
@@ -53,20 +56,25 @@ public class RegisterFragment extends Fragment {
             String email = emailET.getText().toString();
             String password = passwordET.getText().toString();
             if(password.equals(confirmET.getText().toString())){
-                User u = new User(password, new Profile());
+                User u = new User(password);
                 boolean logged = User.addUser(email, u);
                 if(logged){
-                    FragmentManager fm = getActivity().getSupportFragmentManager();
-                    FragmentTransaction transaction = fm.beginTransaction();
-                    Fragment fragment = new LoginFragment();
-                    transaction.replace(R.id.content, fragment);
-                    transaction.commit();
+                    try{
+                        FragmentManager fm = getActivity().getSupportFragmentManager();
+                        FragmentTransaction transaction = fm.beginTransaction();
+                        Fragment fragment = new LoginFragment();
+                        transaction.replace(R.id.content, fragment);
+                        transaction.commit();
+                    }catch (Exception e){
+                        Toast toast = Toast.makeText(context, "Login error has occurred.", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }else{
-                    Toast toast = Toast.makeText(context, "Email already in use.", 3);
+                    Toast toast = Toast.makeText(context, "Email already in use.", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }else{
-                Toast toast = Toast.makeText(context, "Passwords do not match.", 3);
+                Toast toast = Toast.makeText(context, "Passwords do not match.", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
