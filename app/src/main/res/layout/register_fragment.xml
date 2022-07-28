@@ -3,90 +3,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Back_Color1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RegisterFragment">
 
-    <TextView
-        android:id="@+id/title_TV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fit_it_app"
-        app:layout_constraintTop_toTopOf="parent"
+    <GridView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="206dp"
+        android:layout_marginBottom="524dp"
+        android:background="@color/Color2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="500dp"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:textAlignment="center"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/header_TV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        app:layout_constraintTop_toBottomOf="@id/title_TV"
-        app:layout_constraintStart_toStartOf="@id/title_TV"
-        app:layout_constraintEnd_toEndOf="@id/title_TV"
-        android:layout_marginTop="30dp"
-        android:textSize="30sp"
-        android:textAlignment="center"/>
+    <GridView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="305dp"
+        android:background="@color/Color2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/Email_ET"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/header_TV"
-        app:layout_constraintStart_toStartOf="@id/header_TV"
-        app:layout_constraintEnd_toEndOf="@id/header_TV"
-        android:layout_marginTop="10dp"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/password_ET"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/Email_ET"
-        app:layout_constraintStart_toStartOf="@id/Email_ET"
-        app:layout_constraintEnd_toEndOf="@id/Email_ET"
-        android:layout_marginTop="10dp"
-        android:autofillHints="" />
+    <GridView
+        android:layout_width="205dp"
+        android:layout_height="205dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="408dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/confirmPassword_ET"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:background="@color/Color3"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/password_ET"
-        app:layout_constraintStart_toStartOf="@id/password_ET"
         app:layout_constraintEnd_toEndOf="@id/password_ET"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/password_ET"
+        app:layout_constraintTop_toBottomOf="@id/password_ET" />
+
+    <EditText
+        android:id="@+id/password_ET"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:background="@color/Color3"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/Email_ET"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/Email_ET"
+        app:layout_constraintTop_toBottomOf="@id/Email_ET" />
+
+    <EditText
+        android:id="@+id/Email_ET"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:autofillHints=""
+        android:background="@color/Color3"
+        android:ems="10"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@id/header_TV"
+        app:layout_constraintStart_toStartOf="@id/header_TV"
+        app:layout_constraintTop_toBottomOf="@id/header_TV" />
+
+    <TextView
+        android:id="@+id/title_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="500dp"
         android:layout_marginTop="10dp"
-        android:autofillHints="" />
+        android:text="@string/fit_it_app"
+        android:textAlignment="center"
+        android:textSize="48dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.676"  />
+
+    <TextView
+        android:id="@+id/header_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/title_TV"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@id/title_TV"
+        app:layout_constraintTop_toBottomOf="@id/title_TV" />
 
     <Button
         android:id="@+id/submit_btn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:radius="200dp"
         android:text="@string/submit"
-        app:layout_constraintTop_toBottomOf="@id/confirmPassword_ET"
-        app:layout_constraintStart_toStartOf="@id/confirmPassword_ET"
+        android:textColor="@color/Color2"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="@id/password_ET"
-        android:layout_marginTop="50dp"
-        android:radius="200dp"/>
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@id/confirmPassword_ET"
+        app:layout_constraintTop_toBottomOf="@id/confirmPassword_ET" />
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:textColor="@color/Color2"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="30dp"
@@ -97,6 +157,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_as_guest"
+        android:textColor="@color/Color2"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="30dp"
