@@ -1,6 +1,5 @@
 package edu.wit.mobileapp.fit_it_app;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class User {
@@ -9,11 +8,15 @@ public class User {
     private static HashMap<String, User> users = new HashMap<>();
 
     String password;
-    Profile data;
+    HashMap<String,Profile> sizeProfiles;
 
-    public User(String password, Profile data){
-        this.password=password;
-        this.data = data;
+    public User(String password){
+        this(password, new HashMap<>());
+    }
+
+    public User(String password, HashMap<String,Profile> sizeProfiles){
+        this.password = password;
+        this.sizeProfiles = sizeProfiles;
     }
 
     public static User getLoggedUser(){
