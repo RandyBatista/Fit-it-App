@@ -7,7 +7,6 @@
     android:background="@color/Back_Color1"
     tools:context=".ChooseSizeInputFragment">
 
-
     <TextView
         android:id="@+id/title_TV"
         android:layout_width="wrap_content"
