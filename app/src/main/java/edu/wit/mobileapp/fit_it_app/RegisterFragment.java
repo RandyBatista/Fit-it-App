@@ -22,34 +22,13 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.log_in_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.register_fragment, container, false);
 
         emailET = rootView.findViewById(R.id.Email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
 
-        Button loginBtn = rootView.findViewById(R.id.login_btn);
-        Button guestBtn = rootView.findViewById(R.id.guest_btn);
         Button submitBtn = rootView.findViewById(R.id.submit_btn);
-
-        loginBtn.setOnClickListener(v -> {
-            FragmentManager fm = getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            Fragment fragment = new LoginFragment();
-            transaction.replace(R.id.content, fragment);
-            transaction.commit();
-
-        });
-
-        guestBtn.setOnClickListener(v -> {
-
-            FragmentManager fm = getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-
-            Fragment fragment = new ChooseSizeInputFragment();
-            transaction.replace(R.id.content, fragment);
-            transaction.commit();
-        });
 
         submitBtn.setOnClickListener(v -> {
             Context context = requireContext();
@@ -60,6 +39,8 @@ public class RegisterFragment extends Fragment {
                 boolean logged = User.addUser(email, u);
                 if(logged){
                     try{
+                        Toast toast = Toast.makeText(context, "Successfully registered, please log in.", Toast.LENGTH_LONG);
+                        toast.show();
                         FragmentManager fm = getActivity().getSupportFragmentManager();
                         FragmentTransaction transaction = fm.beginTransaction();
                         Fragment fragment = new LoginFragment();
