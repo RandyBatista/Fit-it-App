@@ -1,5 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Back_Color1"
+    >
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Size Country Standard"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/Color2"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size Group"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="171dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="216dp" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="216dp" />
+
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Sizes"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shirt Size"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sweat Shirts"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="404dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shorts"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="463dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pants"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="521dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="579dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shoes"
+        android:textColor="@color/Color2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="639dp" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="390dp" />
+
+    <Spinner
+        android:id="@+id/spinner6"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="449dp" />
+
+    <Spinner
+        android:id="@+id/spinner7"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="507dp" />
+
+    <Spinner
+        android:id="@+id/spinner8"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="565dp" />
+
+    <Spinner
+        android:id="@+id/spinner9"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:outlineSpotShadowColor="@color/Color2"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="625dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
