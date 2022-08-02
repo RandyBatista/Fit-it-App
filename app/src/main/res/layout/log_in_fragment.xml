@@ -138,7 +138,7 @@
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
+s
     <Button
         android:id="@+id/guest_btn"
         android:layout_width="wrap_content"
