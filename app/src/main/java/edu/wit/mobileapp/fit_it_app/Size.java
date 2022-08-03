@@ -16,4 +16,5 @@ public class Size {
         double converter = 0.3937008;
         return new Size(min*converter, max*converter);
     }
+
 }

@@ -79,20 +79,22 @@ public class LoginFragment extends Fragment {
 
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), task -> {
                             if (task.isSuccessful()) {
+                                User.setLoggedUser(mAuth.getCurrentUser());
                                 FragmentManager fm = getActivity().getSupportFragmentManager();
                                 FragmentTransaction transaction = fm.beginTransaction();
 
-                                //Continue if logged in
-                                Fragment fragment = new Fragment();
+                                if(User.loggedUser.sizeProfiles.isEmpty()){
+                                    Fragment fragment = new SizeInputFragment();
+                                }else{
+                                    Fragment fragment = new BrandsViewFragment();
+                                }
                                 transaction.replace(R.id.content, fragment);
                                 transaction.commit();
                             } else {
                                 Toast toast = Toast.makeText(context, "Authentication failed", Toast.LENGTH_SHORT);
                                 toast.show();
                             }
-
                     });
-
         });
         return rootView;
     }
