@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/Back_Color1">
-
-
+    
     <TextView
         android:id="@+id/brandText"
         android:layout_width="wrap_content"

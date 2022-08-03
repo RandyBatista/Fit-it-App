@@ -9,178 +9,164 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Back_Color1">
+        android:background="@color/Back_Color1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName6"
-            android:layout_width="78dp"
-            android:layout_height="38dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="247dp"
-            tools:layout_editor_absoluteY="346dp" />
+        <GridView
+            android:id="@+id/ListGridView01"
+            android:layout_width="415dp"
+            android:layout_height="418dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginTop="20dp"
+            android:background="@color/Color3"
+            android:horizontalSpacing="10dp"
+            android:numColumns="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.358" />
+
+        <GridView
+            android:id="@+id/ListGridView02"
+            android:layout_width="415dp"
+            android:layout_height="418dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/Color1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.358" />
+
+        <GridView
+            android:id="@+id/ListGridView03"
+            android:layout_width="371dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26" />
+
+        <GridView
+            android:id="@+id/ListGridView04"
+            android:layout_width="371dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.46" />
+
+        <GridView
+            android:id="@+id/ListGridView05"
+            android:layout_width="371dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.66" />
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="87dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="247dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName7"
-            android:layout_width="78dp"
-            android:layout_height="38dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="346dp" />
-
-        <TextView
-            android:id="@+id/textView"
+            android:id="@+id/MeasurementsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="Measurements"
             android:textColor="@color/Color2"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="78dp"
-            android:layout_height="38dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="247dp"
-            tools:layout_editor_absoluteY="240dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="78dp"
-            android:layout_height="38dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="240dp" />
+        <TextView
+            android:id="@+id/waistText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waist"
+            android:layout_marginTop="200px"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MeasurementsText"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/bustText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bust"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="100px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waistTextBox" />
+
+        <TextView
+            android:id="@+id/hipsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hips"
-            tools:layout_editor_absoluteX="87dp"
-            tools:layout_editor_absoluteY="200dp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hips"
-            tools:layout_editor_absoluteX="247dp"
-            tools:layout_editor_absoluteY="200dp" />
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="100px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bustTextBox" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="78dp"
-            android:layout_height="38dp"
+            android:id="@+id/waistTextBox"
+            android:layout_width="234dp"
+            android:layout_height="48dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="249dp"
-            tools:layout_editor_absoluteY="444dp" />
+            android:text="Type Size"
+            android:textAlignment="center"
+            android:layout_marginTop="50px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waistText" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="78dp"
-            android:layout_height="38dp"
+            android:id="@+id/bustTextBox"
+            android:layout_width="234dp"
+            android:layout_height="48dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="444dp" />
+            android:text="Type Size"
+            android:textAlignment="center"
+            android:layout_marginTop="50px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bustText"/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="89dp"
-            tools:layout_editor_absoluteY="404dp" />
+        <EditText
+            android:id="@+id/hipsTextBox"
+            android:layout_width="234dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Type Size"
+            android:layout_marginTop="50px"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hipsText" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="249dp"
-            tools:layout_editor_absoluteY="404dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="78dp"
-        android:layout_height="38dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="135dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="78dp"
-        android:layout_height="38dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="135dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Measurements"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/Color2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bust"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="95dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Waist"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="95dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
