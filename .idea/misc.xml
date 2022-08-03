@@ -6,13 +6,18 @@
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.241" />
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/activity_main.xml" value="0.2546875" />
+        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/brands_fragment.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/get_measures_frag.xml" value="0.2" />
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/getm_frag.xml" value="0.2962287104622871" />
+        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/list_grid_item.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/log_in_fragment.xml" value="0.268" />
+        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/measurements_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/navigation.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/register_fragment.xml" value="0.2546875" />
         <entry key="..\:/Users/Randy Batista/Desktop/Homework/Mobile App Development/Final Project/fit_it_app/app/src/main/res/layout/specify_size_fragment.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/smilyanovay/Projects/COMP3660_final/app/src/main/res/layout/log_in_fragment.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/smilyanovay/Projects/COMP3660_final/app/src/main/res/layout/register_fragment.xml" value="0.22010869565217392" />
+        <entry key="..\:/Users/sonzee/AndroidStudioProjects/Fit-it-App/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/sonzee/AndroidStudioProjects/Fit-it-App/app/src/main/res/layout/log_in_fragment.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/sonzee/AndroidStudioProjects/Fit-it-App/app/src/main/res/layout/register_fragment.xml" value="0.20885416666666667" />
       </map>
     </option>
   </component>
@@ -21,5 +26,8 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="SuppressionsComponent">
+    <option name="suppComments" value="[]" />
   </component>
 </project>
