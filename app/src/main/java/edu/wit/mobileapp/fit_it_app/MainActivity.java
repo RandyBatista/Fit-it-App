@@ -5,14 +5,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
+
+import com.google.firebase.FirebaseApp;
 
 //import io.realm.Realm;
 //import io.realm.mongodb.App;
 //import io.realm.mongodb.AppConfiguration;
 
 public class MainActivity extends AppCompatActivity {
-
     String Appid = "fit_it-bmthw";
 
     @Override
