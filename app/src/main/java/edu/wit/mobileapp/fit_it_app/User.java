@@ -5,16 +5,21 @@ import java.util.HashMap;
 public class User {
 
     public static User loggedUser;
-    private static HashMap<String, User> users = new HashMap<>();
 
-    String password;
+    public String email;
+    public String password;
+    //String password;
     HashMap<String,Profile> sizeProfiles;
 
-    public User(String password){
-        this(password, new HashMap<>());
+    public User(){
     }
 
-    public User(String password, HashMap<String,Profile> sizeProfiles){
+    public User(String email,String password){
+        this(email, password, new HashMap<>());
+    }
+
+    public User(String email, String password, HashMap<String,Profile> sizeProfiles){
+        this.email = email;
         this.password = password;
         this.sizeProfiles = sizeProfiles;
     }
@@ -22,25 +27,8 @@ public class User {
     public static User getLoggedUser(){
         return loggedUser;
     }
-
-    public static boolean loginUser(String email, String password){
-        if(users == null)
-            return false;
-        if (users.containsKey(email)){
-            if(users.get(email).password.equals(password)) {
-                loggedUser = users.get(email);
-                return true;
-            }
-        }return false;
-    }
-
-    public static boolean addUser(String email, User u){
-        if (users.containsKey(email)){
-            return false;
-        }else{
-            users.put(email, u);
-            return true;
-        }
+    public static void setLoggedUser(User user){
+        loggedUser = user;
     }
 
 }
