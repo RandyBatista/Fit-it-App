@@ -10,42 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/Back_Color1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="328dp">
 
         <GridView
-            android:id="@+id/ListGridView01"
+            android:id="@+id/ListGridView"
             android:layout_width="415dp"
             android:layout_height="418dp"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_marginTop="20dp"
-            android:background="@color/Color3"
-            android:horizontalSpacing="10dp"
-            android:numColumns="3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.358" />
-
-        <GridView
-            android:id="@+id/ListGridView02"
-            android:layout_width="415dp"
-            android:layout_height="418dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:background="@color/Color1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/MeasurementsText"
             app:layout_constraintVertical_bias="0.358" />
 
         <GridView
-            android:id="@+id/ListGridView03"
+            android:id="@+id/ListGridView01"
             android:layout_width="371dp"
             android:layout_height="44dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,10 +38,10 @@
             app:layout_constraintVertical_bias="0.26" />
 
         <GridView
-            android:id="@+id/ListGridView04"
+            android:id="@+id/ListGridView02"
             android:layout_width="371dp"
             android:layout_height="44dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +53,7 @@
             android:id="@+id/ListGridView05"
             android:layout_width="371dp"
             android:layout_height="44dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,47 +65,71 @@
             android:id="@+id/MeasurementsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginBottom="80dp"
             android:text="Measurements"
             android:textColor="@color/Color2"
             android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/ListGridView"/>
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="40dp"
+            android:text="Measurement Type"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/sizeSpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MeasurementsText" />
+
+        <Spinner
+            android:id="@+id/sizeSpinner"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:drawable/btn_dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MeasurementsText" />
 
         <TextView
             android:id="@+id/waistText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Waist"
-            android:layout_marginTop="200px"
-            android:textStyle="bold"
             android:textSize="20dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/MeasurementsText"/>
+            app:layout_constraintTop_toTopOf="@+id/ListGridView" />
 
         <TextView
             android:id="@+id/bustText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="90px"
             android:text="Bust"
-            android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_marginTop="100px"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/waistTextBox" />
+
 
         <TextView
             android:id="@+id/hipsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="90px"
             android:text="Hips"
-            android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_marginTop="100px"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bustTextBox" />
@@ -130,11 +138,11 @@
             android:id="@+id/waistTextBox"
             android:layout_width="234dp"
             android:layout_height="48dp"
+            android:layout_marginTop="50px"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Type Size"
             android:textAlignment="center"
-            android:layout_marginTop="50px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/waistText" />
@@ -143,27 +151,37 @@
             android:id="@+id/bustTextBox"
             android:layout_width="234dp"
             android:layout_height="48dp"
+            android:layout_marginTop="50px"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Type Size"
             android:textAlignment="center"
-            android:layout_marginTop="50px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bustText"/>
+            app:layout_constraintTop_toBottomOf="@+id/bustText" />
 
         <EditText
             android:id="@+id/hipsTextBox"
             android:layout_width="234dp"
             android:layout_height="48dp"
+            android:layout_marginTop="50px"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Type Size"
-            android:layout_marginTop="50px"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hipsText" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="184dp"
+            android:layout_height="54dp"
+            android:text="Submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
