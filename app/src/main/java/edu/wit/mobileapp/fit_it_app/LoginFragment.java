@@ -2,6 +2,7 @@ package edu.wit.mobileapp.fit_it_app;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,20 +80,30 @@ public class LoginFragment extends Fragment {
 
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), task -> {
                             if (task.isSuccessful()) {
+                                User.setLoggedUser(mAuth.getCurrentUser());
                                 FragmentManager fm = getActivity().getSupportFragmentManager();
                                 FragmentTransaction transaction = fm.beginTransaction();
 
-                                //Continue if logged in
-                                Fragment fragment = new Fragment();
-                                transaction.replace(R.id.content, fragment);
-                                transaction.commit();
+                                try {
+                                    Fragment fragment;
+
+                                    if(User.loggedUser.sizeProfiles.isEmpty()){
+                                        fragment = new SizeInputFragment();
+                                    }else{
+                                        fragment = new BrandsViewFragment();
+                                    }
+
+                                    transaction.replace(R.id.content, fragment);
+                                    transaction.commit();
+                                } catch (Exception e) {
+                                    Log.v(null, e.toString());
+                                }
+
                             } else {
                                 Toast toast = Toast.makeText(context, "Authentication failed", Toast.LENGTH_SHORT);
                                 toast.show();
                             }
-
                     });
-
         });
         return rootView;
     }

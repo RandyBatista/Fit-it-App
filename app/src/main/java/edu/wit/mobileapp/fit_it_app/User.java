@@ -1,5 +1,7 @@
 package edu.wit.mobileapp.fit_it_app;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.HashMap;
 
 public class User {
@@ -27,8 +29,9 @@ public class User {
     public static User getLoggedUser(){
         return loggedUser;
     }
-    public static void setLoggedUser(User user){
-        loggedUser = user;
+
+    public static void setLoggedUser(FirebaseUser user){
+        System.out.println(user);
     }
 
 }
