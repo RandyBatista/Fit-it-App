@@ -19,7 +19,7 @@ public class User {
     public String UID;
     //String password;
     HashMap<String,Profile> sizeProfiles;
-    final static HashMap<String, Profile> has = new HashMap<String, Profile>(){{put("Null", new Profile());}};
+    final static HashMap<String, Profile> has = new HashMap<String, Profile>(){{put("Profile 1", new Profile());}};
 
     public User(){
         this(has);
@@ -28,6 +28,7 @@ public class User {
     public User(HashMap<String,Profile> sizeProfiles){
         this.sizeProfiles = sizeProfiles;
     }
+
 
     public static User getLoggedUser(){
         return loggedUser;
