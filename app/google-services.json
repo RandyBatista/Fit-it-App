@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "122012602269",
+    "project_id": "fit-it-app-eb283",
+    "storage_bucket": "fit-it-app-eb283.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122012602269:android:441262ce0259b8b139e974",
+        "android_client_info": {
+          "package_name": "edu.wit.mobileapp.fit_it_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122012602269-3j7lmpb1ujsdgisequ3o8us9b473ai6q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUrlN_6b1dfuXwww1hVUhc-P7CjU-yLBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122012602269-3j7lmpb1ujsdgisequ3o8us9b473ai6q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
