@@ -39,14 +39,7 @@ public class RegisterFragment extends Fragment {
         // Initialize Firebase authentication
         mAuth = FirebaseAuth.getInstance();
 
-        // checks if the user is authenticated, -------------------> has error messages
-        //    - if authenticated, closes the Register activity
-         /*  if(mAuth.getCurrentUser() != null) {
-            finish();
-            return;
-        }*/
-
-        emailET = rootView.findViewById(R.id.Email_ET);
+        emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
 

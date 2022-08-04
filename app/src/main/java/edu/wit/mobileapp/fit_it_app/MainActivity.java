@@ -10,10 +10,6 @@ import android.os.Bundle;
 
 import com.google.firebase.FirebaseApp;
 
-//import io.realm.Realm;
-//import io.realm.mongodb.App;
-//import io.realm.mongodb.AppConfiguration;
-
 public class MainActivity extends AppCompatActivity {
     String Appid = "fit_it-bmthw";
 
@@ -21,12 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Realm.init(this); // context, usually an Activity or Application
-
-        // Creates an instance of the Realm application in Android Studio
-        // which is linked to online realm created
-       // App app = new App(new AppConfiguration.Builder(Appid).build());
 
         if(savedInstanceState == null) {
             FragmentManager fm = getSupportFragmentManager();
