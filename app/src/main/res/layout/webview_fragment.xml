@@ -7,6 +7,7 @@
     android:background="@color/Back_Color1">
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/webView"
         android:layout_width="412dp"
         android:layout_height="649dp"
         android:layout_marginTop="40dp"
@@ -40,7 +41,9 @@
         android:textColor="@color/white"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/waistRecSizeText"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf=""
+        tools:layout_editor_absoluteY="49dp" />
 
     <TextView
         android:id="@+id/waistRecSizeText"
