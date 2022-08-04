@@ -9,59 +9,54 @@
     tools:context=".RegisterFragment">
 
     <GridView
-        android:layout_width="200dp"
-        android:layout_height="180dp"
+        android:id="@+id/grid1"
+        android:layout_width="205dp"
+        android:layout_height="340dp"
         android:background="@color/Color2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintBottom_toTopOf="@+id/grid2"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <GridView
-        android:layout_width="200dp"
-        android:layout_height="180dp"
+        android:id="@+id/grid2"
+        android:layout_width="205dp"
+        android:layout_height="340dp"
         android:background="@color/Color2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintVertical_bias="0.665" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grid1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <GridView
-        android:layout_width="200dp"
-        android:layout_height="180dp"
-        android:background="@color/Color2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.98"
-        app:layout_constraintVertical_bias="0.335" />
-
-    <GridView
-        android:layout_width="200dp"
-        android:layout_height="180dp"
-        android:background="@color/Color2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.98"
-        app:layout_constraintVertical_bias="0.99" />
-
-    <GridView
+        android:id="@+id/main_grid"
         android:layout_width="320dp"
-        android:layout_height="320dp"
+        android:layout_height="260dp"
         android:background="@drawable/shape"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.406" />
+
+    <TextView
+        android:id="@+id/header_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/register"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/main_grid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.014" />
 
     <EditText
         android:id="@+id/confirmPassword_ET"
@@ -70,10 +65,10 @@
         android:layout_marginTop="8dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@id/password_ET"
         app:layout_constraintStart_toStartOf="@id/password_ET"
+        app:layout_constraintEnd_toEndOf="@id/password_ET"
         app:layout_constraintTop_toBottomOf="@id/password_ET" />
 
     <EditText
@@ -85,12 +80,12 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@id/Email_ET"
-        app:layout_constraintStart_toStartOf="@id/Email_ET"
-        app:layout_constraintTop_toBottomOf="@id/Email_ET" />
+        app:layout_constraintStart_toStartOf="@id/email_ET"
+        app:layout_constraintEnd_toEndOf="@id/email_ET"
+        app:layout_constraintTop_toBottomOf="@id/email_ET" />
 
     <EditText
-        android:id="@+id/Email_ET"
+        android:id="@+id/email_ET"
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -98,50 +93,20 @@
         android:ems="10"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@id/header_TV"
         app:layout_constraintStart_toStartOf="@id/header_TV"
+        app:layout_constraintEnd_toEndOf="@id/header_TV"
         app:layout_constraintTop_toBottomOf="@id/header_TV" />
-
-    <TextView
-        android:id="@+id/title_TV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fit_it_app"
-        android:textAlignment="center"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"  />
-
-    <TextView
-        android:id="@+id/header_TV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/register"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/title_TV"
-        app:layout_constraintStart_toStartOf="@id/title_TV"
-        app:layout_constraintTop_toBottomOf="@id/title_TV" />
 
     <Button
         android:id="@+id/submit_btn"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="50dp"
         android:radius="200dp"
         android:text="@string/submit"
-        android:textColor="@color/white"
         android:backgroundTint="@color/Color1"
-        app:layout_constraintEnd_toEndOf="@id/password_ET"
         app:layout_constraintStart_toStartOf="@id/confirmPassword_ET"
+        app:layout_constraintEnd_toEndOf="@id/password_ET"
         app:layout_constraintTop_toBottomOf="@id/confirmPassword_ET" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
