@@ -56,7 +56,7 @@
         android:layout_marginTop="45dp"/>
 
     <Spinner
-        android:id="@+id/pickBrandSpinner"
+        android:id="@+id/brandSpinner"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginTop="35dp"

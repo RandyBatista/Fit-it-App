@@ -42,7 +42,7 @@
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/waistRecSizeText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf=""
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteY="49dp" />
 
     <TextView
