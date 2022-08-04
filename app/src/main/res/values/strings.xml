@@ -1,17 +1,22 @@
 <resources>
     <string name="app_name">Fit_It_App</string>
+    <string name="fit_it_in">FIT IT IN</string>
     <string name="username">Username</string>
+    <string name="email_address">Email Address</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
     <string name="submit">Submit</string>
     <string name="register">Register</string>
-    <string name="guess_login">Guess LogIn</string>
+    <string name="guess_login">Guess Login</string>
     <string name="login_as_guest">Login as Guest</string>
-    <string name="get_measurements">Get Measurements</string>
-    <string name="fit_it_app">FIT IT IN</string>
     <string name="log_in">Log In</string>
+    <string name="create_profile">Haven\'t created a profile yet?</string>
+    <string name="no_profile">Don\'t want to create a profile?</string>
+    <string name="input_type">Choose Input Type</string>
     <string name="i_know_my_measurements">I Know My Measurements</string>
-    <string name="i_know_my_size">I know My Size</string>
-    <string name="email_address">Email Address</string>
+    <string name="choose_measurements">Please choose how you want to search: \nBy measurements (ex: waist is 30 inches):</string>
+    <string name="choose_size">By size (ex: shirt size is a Small):</string>
+    <string name="i_know_my_size">I Know My Size</string>
     <string name="measurements">Measurements</string>
-    <string name="fit_it_in">FIT IT IN</string>
+    <string name="brands">Brands</string>
 </resources>
