@@ -44,7 +44,7 @@ public class LoginFragment extends Fragment {
         // Initialize Firebase authentication
         mAuth = FirebaseAuth.getInstance();
 
-        emailET = rootView.findViewById(R.id.Email_ET);
+        emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         Button registerBtn = rootView.findViewById(R.id.register_btn);
         Button guestBtn = rootView.findViewById(R.id.guest_btn);

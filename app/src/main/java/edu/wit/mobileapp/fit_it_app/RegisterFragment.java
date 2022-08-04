@@ -46,7 +46,7 @@ public class RegisterFragment extends Fragment {
             return;
         }*/
 
-        emailET = rootView.findViewById(R.id.Email_ET);
+        emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
 
