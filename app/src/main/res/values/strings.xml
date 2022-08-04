@@ -19,4 +19,6 @@
     <string name="i_know_my_size">I Know My Size</string>
     <string name="measurements">Measurements</string>
     <string name="brands">Brands</string>
+    <string name="choose_brand">Please choose a brand you would like to shop from.</string>
+
 </resources>
