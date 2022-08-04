@@ -266,7 +266,7 @@
         android:layout_marginTop="10dp"  />
 
     <Spinner
-        android:id="@+id/spinner9"
+        android:id="@+id/shoesSpinner"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
