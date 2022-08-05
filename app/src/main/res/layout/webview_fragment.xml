@@ -28,9 +28,9 @@
         android:textStyle="bold"
         android:textColor="@color/Color2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"/>
 
     <TextView
         android:id="@+id/recMeasures"
@@ -40,21 +40,24 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="17dp"
-        app:layout_constraintEnd_toEndOf="@+id/waistRecSizeText"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="90dp"
+        app:layout_constraintEnd_toEndOf=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteY="49dp" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/waistRecSizeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="waist"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="15dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/bustRecSizeText"
         app:layout_constraintStart_toStartOf="@+id/recMeasures"
         app:layout_constraintTop_toBottomOf="@+id/pageTitle" />
 
@@ -62,11 +65,12 @@
         android:id="@+id/bustRecSizeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="bust"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="15dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/waistRecSizeText"
         app:layout_constraintTop_toBottomOf="@+id/pageTitle" />
@@ -75,11 +79,12 @@
         android:id="@+id/hipsRecSizeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="hips"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="15dp"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/bustRecSizeText"
         app:layout_constraintTop_toBottomOf="@+id/pageTitle"/>
