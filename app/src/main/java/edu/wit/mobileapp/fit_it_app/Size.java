@@ -17,4 +17,8 @@ public class Size {
         return new Size(min*converter, max*converter);
     }
 
+    public double getAverage(){
+        return Double.parseDouble(f.format((min + max)/2.0));
+    }
+
 }

@@ -14,7 +14,40 @@ public class ShirtSize {
         this.hip = hip;
     }
 
-    public HashMap<String, ShirtSize> getUniNike(){
+    public static ShirtSize getShirtSize(String brand, String sizeLabel, String gender, String group){
+        switch (brand){
+            case "Nike":
+                switch(group){
+                    case "Adult (16+)":
+                        switch (gender){
+                            case "Male":
+                                return ShirtSize.getUniNike().get(sizeLabel);
+                            case "Female":
+                                ShirtSize.getWomenNike().get(sizeLabel);
+                            case "Other":
+                                return ShirtSize.getUniNike().get(sizeLabel);
+                            default:
+                                break;
+                        }
+                    case "Child (7-15)":
+                        switch (gender){
+                            case "Male":
+                                ShirtSize.getBoyNike().get(sizeLabel);
+                            case "Female":
+                                ShirtSize.getGirlNike().get(sizeLabel);
+                            case "Other":
+                                return ShirtSize.getBoyNike().get(sizeLabel);
+                            default:
+                                break;
+                        }
+                    default:
+                        break;
+                }
+        }
+        return null;
+    }
+
+    public static HashMap<String, ShirtSize> getUniNike(){
         HashMap<String, ShirtSize> sizes = new HashMap<>();
         sizes.put("XXS", new ShirtSize(new Size(72, 80), new Size(57, 65), new Size(72, 80)));
         sizes.put("XS", new ShirtSize(new Size(80, 88), new Size(65, 73), new Size(80, 88)));
@@ -27,7 +60,7 @@ public class ShirtSize {
         sizes.put("4XL", new ShirtSize(new Size(148, 160), new Size(133, 145), new Size(136, 148)));
         return sizes;
     }
-    public HashMap<String, ShirtSize> getWomenNike(){
+    public static HashMap<String, ShirtSize> getWomenNike(){
         HashMap<String, ShirtSize> sizes = new HashMap<>();
         sizes.put("XXS", new ShirtSize(new Size(70, 76), new Size(54, 60), new Size(78, 84)));
         sizes.put("XS", new ShirtSize(new Size(76, 83), new Size(60, 67), new Size(84, 91)));
@@ -41,7 +74,7 @@ public class ShirtSize {
         sizes.put("3X", new ShirtSize(new Size(134, 144), new Size(124, 134), new Size(138, 148)));
         return sizes;
     }
-    public HashMap<String, ShirtSize> getBoyNike(){
+    public static HashMap<String, ShirtSize> getBoyNike(){
         HashMap<String, ShirtSize> sizes = new HashMap<>();
         sizes.put("XS", new ShirtSize(new Size(64.5, 66), new Size(59.5, 61.5), new Size(68.5, 71)));
         sizes.put("S", new ShirtSize(new Size(66, 69), new Size(61.5, 65), new Size(71, 74.5)));
@@ -54,7 +87,7 @@ public class ShirtSize {
         sizes.put("XL+", new ShirtSize(new Size(91, 98), new Size(82, 88), new Size(93.5, 100)));
         return sizes;
     }
-    public HashMap<String, ShirtSize> getGirlNike(){
+    public static HashMap<String, ShirtSize> getGirlNike(){
         HashMap<String, ShirtSize> sizes = new HashMap<>();
         sizes.put("XS", new ShirtSize(new Size(64.5, 68), new Size(59.5, 61), new Size(68.5, 73)));
         sizes.put("S", new ShirtSize(new Size(68, 73), new Size(61, 64), new Size(73, 78.5)));
