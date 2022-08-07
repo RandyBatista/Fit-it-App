@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.fragment.app.Fragment;
 
@@ -20,7 +21,12 @@ public class ShoppingFragment extends Fragment {
             url = bundle.getString("URL", "");
             name = bundle.getString("NAME", "");
         }
+
         WebView webview = rootView.findViewById(R.id.webView);
+        webview.getSettings().setDomStorageEnabled(true);
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setUseWideViewPort(true);
+        webview.setWebViewClient(new WebViewClient());
         webview.loadUrl(url);
         return rootView;
     }
