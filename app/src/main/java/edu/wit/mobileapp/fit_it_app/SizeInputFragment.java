@@ -1,5 +1,6 @@
 package edu.wit.mobileapp.fit_it_app;
 
+import android.util.Log;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +11,15 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class SizeInputFragment extends Fragment{
 
@@ -29,14 +36,14 @@ public class SizeInputFragment extends Fragment{
 
         Spinner pickCountrySpinner = rootView.findViewById(R.id.pickCountrySpinner);
         Spinner genderSpinner = rootView.findViewById(R.id.genderSpinner);
-        Spinner groupSpinner = rootView.findViewById(R.id.groupSpinner);
+        Spinner groupSpinner = rootView.findViewById(R.id.ageGroupSpinner);
         Spinner brandSpinner = rootView.findViewById(R.id.brandSpinner);
         shirtSpinner = rootView.findViewById(R.id.shirtSpinner);
         sweatShirtSpinner = rootView.findViewById(R.id.sweatShirtSpinner);
         shortsSpinner = rootView.findViewById(R.id.shortsSpinner);
         pantsSpinner = rootView.findViewById(R.id.pantsSpinner);
         shoesSpinner = rootView.findViewById(R.id.shoesSpinner);
-        Button submit = rootView.findViewById(R.id.submitCountryStandard_btn);
+        Button submit = rootView.findViewById(R.id.submitSizes_btn);
 
         // Creating adapter for spinner
         ArrayAdapter<String> countryAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, generateCountries());
@@ -106,7 +113,48 @@ public class SizeInputFragment extends Fragment{
             String selectedBrand = brandSpinner.getSelectedItem().toString();
             String selectedShirtSize = shirtSpinner.getSelectedItem().toString();
             ShirtSize shirtSize = ShirtSize.getShirtSize(selectedBrand, selectedShirtSize, selectedGender, selectedGroup);
-            User.loggedUser.sizeProfiles.get("Profile 1").setShirtSize(shirtSize);
+            Profile newProf = new Profile();
+            newProf.setShirtSize(shirtSize);
+            User u = User.getLoggedUser();
+            try {
+                if (u.sizeProfiles.length() == 0) {
+                    u.sizeProfiles.put("Profile 1", newProf.toJson());
+                } else {
+                    u.sizeProfiles.put("Profile " + (User.getLoggedUser().sizeProfiles.length() + 1), newProf.toJson());
+                }
+            }catch(Exception e){
+                Log.v(null, e.toString());
+            }
+            User.setLoggedUser(u);
+            Log.v(null, u.sizeProfiles.toString());
+            if(FirebaseAuth.getInstance().getCurrentUser() != null){
+                FirebaseDatabase.getInstance("https://fit-it-app-eb283-default-rtdb.firebaseio.com/").getReference("users").
+                        child(u.UID).child("sizeProfiles").setValue(u.sizeProfiles.toString()).
+                        addOnCompleteListener(task1 -> {
+                            try {
+                                FragmentManager fm = getActivity().getSupportFragmentManager();
+                                FragmentTransaction transaction = fm.beginTransaction();
+                                Fragment fragment;
+                                fragment = new BrandsViewFragment();
+                                transaction.replace(R.id.content, fragment);
+                                transaction.commit();
+                            } catch (Exception e) {
+                                Log.v(null, e.toString());
+                            }
+                        });
+            }else{
+                try {
+                    Log.v(null, "No User Found");
+                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    Fragment fragment;
+                    fragment = new BrandsViewFragment();
+                    transaction.replace(R.id.content, fragment);
+                    transaction.commit();
+                } catch (Exception e) {
+                    Log.v(null, e.toString());
+                }
+            }
         });
 
         return rootView;
@@ -125,6 +173,10 @@ public class SizeInputFragment extends Fragment{
         ArrayAdapter<String> shortAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, generateShorts(brand, group, gender));
         shortAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         shortsSpinner.setAdapter(shortAdapter);
+        // Creating adapter for spinner
+        ArrayAdapter<String> pantsAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, generatePants(brand, group, gender));
+        pantsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        pantsSpinner.setAdapter(pantsAdapter);
         // Creating adapter for spinner
         ArrayAdapter<String> shoeAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, generateShoes(brand, group, gender));
         shoeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -166,40 +218,30 @@ public class SizeInputFragment extends Fragment{
                     case "Adult (16+)":
                         switch (gender){
                             case "Male":
-                                for(String s:ShirtSize.getUniNike().keySet()){
-                                    list.add(s);
-                                }
+                                list = ShirtSize.getShirtSizeKeySet(ShirtSize.getUniNike());break;
                             case "Female":
-                                for(String s:ShirtSize.getWomenNike().keySet()){
-                                    list.add(s);
-                                }
+                                list = ShirtSize.getShirtSizeKeySet(ShirtSize.getWomenNike());break;
                             case "Other":
-                                for(String s:ShirtSize.getUniNike().keySet()){
-                                    list.add(s);
-                                }
+                                list = ShirtSize.getShirtSizeKeySet(ShirtSize.getUniNike());break;
                             default:
                                 break;
-                        }
+                        }break;
                     case "Child (7-15)":
                         switch (gender){
                             case "Male":
-                                for(String s:ShirtSize.getBoyNike().keySet()){
-                                    list.add(s);
-                                }
+                                list = ShirtSize.getShirtSizeKeySet(ShirtSize.getBoyNike());break;
                             case "Female":
-                                for(String s:ShirtSize.getGirlNike().keySet()){
-                                    list.add(s);
-                                }
+                                list = ShirtSize.getShirtSizeKeySet(ShirtSize.getGirlNike());break;
                             case "Other":
-                                for(String s:ShirtSize.getBoyNike().keySet()){
-                                    list.add(s);
-                                }
+                                list = ShirtSize.getShirtSizeKeySet(ShirtSize.getBoyNike());break;
                             default:
                                 break;
-                        }
+                        }break;
                     default:
                         break;
-                }
+                }break;
+            default:
+                break;
         }
         return list;
     }
@@ -209,6 +251,11 @@ public class SizeInputFragment extends Fragment{
         return list;
     }
     public List<String> generateShorts(String brand, String group, String gender){
+        List<String> list = new ArrayList<>();
+        list.add("N/A");
+        return list;
+    }
+    public List<String> generatePants(String brand, String group, String gender){
         List<String> list = new ArrayList<>();
         list.add("N/A");
         return list;
