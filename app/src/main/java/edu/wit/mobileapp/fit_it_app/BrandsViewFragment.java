@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.fragment.app.Fragment;
@@ -19,7 +20,7 @@ public class BrandsViewFragment extends Fragment {
         GridView brandsGV = rootView.findViewById(R.id.brands_GV);
         BrandCardAdapter adapter = new BrandCardAdapter(getContext(), Brand.generateAllBrands(getContext()));
         brandsGV.setAdapter(adapter);
-        brandsGV.setOnItemClickListener(new OnItemClickListener() {
+        brandsGV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
@@ -31,7 +32,7 @@ public class BrandsViewFragment extends Fragment {
                     Fragment fragment;
                     Bundle bundle = new Bundle();
                     bundle.putString("URL", brand.url);
-                    bundle.putString("NAME", brnad.name);
+                    bundle.putString("NAME", brand.name);
                     fragment = new ShoppingFragment();
                     fragment.setArguments(bundle);
                     transaction.replace(R.id.content, fragment);
