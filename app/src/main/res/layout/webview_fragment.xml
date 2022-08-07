@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Back_Color1">
-
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="412dp"
-        android:layout_height="649dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recMeasures"
-        android:backgroundTint="@color/Color3"/>
 
     <TextView
         android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search Results"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/Color2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +19,32 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"/>
 
+    <LinearLayout
+        android:id="@+id/recommendations"
+        android:orientation="vertical"
+        android:layout_width="400dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle">
+
+        <ListView
+            android:id="@+id/ListView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="412dp"
+        android:layout_height="649dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recommendations"
+        android:backgroundTint="@color/Color3"/>
+<!--
     <TextView
         android:id="@+id/recMeasures"
         android:layout_width="wrap_content"
@@ -38,11 +53,11 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="17dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="90dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle"/>
 
     <TextView
         android:id="@+id/waistRecSizeText"
@@ -52,11 +67,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         app:layout_constraintEnd_toEndOf="@+id/bustRecSizeText"
         app:layout_constraintStart_toStartOf="@+id/recMeasures"
-        app:layout_constraintTop_toBottomOf="@+id/pageTitle" />
+        app:layout_constraintTop_toTopOf="@+id/recMeasures" />
 
     <TextView
         android:id="@+id/bustRecSizeText"
@@ -85,5 +99,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/bustRecSizeText"
         app:layout_constraintTop_toBottomOf="@+id/pageTitle"/>
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
