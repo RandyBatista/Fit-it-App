@@ -64,7 +64,7 @@ public class RegisterFragment extends Fragment {
                             if (task.isSuccessful()) {
                                 // creates object of type user which will be initialized
                                 // with the data of the new User
-                                User user = new User();
+                                User user = new User(FirebaseAuth.getInstance().getCurrentUser().getUid());
                                 // saves data into database
                                 // ones data is saved into database onComplete is executed
                                 FirebaseDatabase.getInstance("https://fit-it-app-eb283-default-rtdb.firebaseio.com/").getReference("users").

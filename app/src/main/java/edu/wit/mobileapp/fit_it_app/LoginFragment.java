@@ -26,6 +26,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class LoginFragment extends Fragment {
@@ -44,13 +46,12 @@ public class LoginFragment extends Fragment {
         // Initialize Firebase authentication
         mAuth = FirebaseAuth.getInstance();
 
+        //Get all interactables within layout
         emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         Button registerBtn = rootView.findViewById(R.id.register_btn);
         Button guestBtn = rootView.findViewById(R.id.guest_btn);
         Button submitBtn = rootView.findViewById(R.id.submit_btn);
-
-       // Context context = requireContext(); //--> producing errors
 
         registerBtn.setOnClickListener(v -> {
             FragmentManager fm = getActivity().getSupportFragmentManager();
@@ -64,7 +65,7 @@ public class LoginFragment extends Fragment {
 
             FragmentManager fm = getActivity().getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-
+            User.setLoggedUser(new User("None"));
             Fragment fragment = new ChooseSizeInputFragment();
             transaction.replace(R.id.content, fragment);
             transaction.commit();
@@ -85,14 +86,38 @@ public class LoginFragment extends Fragment {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), task -> {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user != null) {
-                    FirebaseDatabase.getInstance().getReference(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            HashMap<String, Profile> profiles = snapshot.child("sizeProfiles").getValue(HashMap.class);
-                            if (profiles == null) {
-                                profiles = new HashMap<>();
+                            String profiles = snapshot.child("sizeProfiles").getValue(String.class);
+                            String uid = snapshot.child("UID").getValue(String.class);
+                            User u;
+                            try {
+                                if (profiles == null) {
+                                    u = new User(uid);
+                                } else {
+                                    u = new User(uid, new JSONObject(profiles));
+                                }
+                                User.setLoggedUser(u);
+                            }catch(Exception e){
+                                Log.v(null, e.toString());
                             }
-                            User.loggedUser = new User(profiles);
+                            try {
+                                FragmentManager fm = getActivity().getSupportFragmentManager();
+                                FragmentTransaction transaction = fm.beginTransaction();
+                                Fragment fragment;
+
+                                if(User.getLoggedUser().sizeProfiles.length() == 0){
+                                    fragment = new ChooseSizeInputFragment();
+                                }else{
+                                    fragment = new BrandsViewFragment();
+                                }
+
+                                transaction.replace(R.id.content, fragment);
+                                transaction.commit();
+                            } catch (Exception e) {
+                                Log.v(null, e.toString());
+                            }
                         }
 
                         @Override
@@ -100,23 +125,6 @@ public class LoginFragment extends Fragment {
                             Log.v(null, "error");
                         }
                     });
-
-                    try {
-                        FragmentManager fm = getActivity().getSupportFragmentManager();
-                        FragmentTransaction transaction = fm.beginTransaction();
-                        Fragment fragment;
-
-                        if(User.loggedUser.sizeProfiles.isEmpty()){
-                            fragment = new ChooseSizeInputFragment();
-                        }else{
-                            fragment = new BrandsViewFragment();
-                        }
-
-                        transaction.replace(R.id.content, fragment);
-                        transaction.commit();
-                    } catch (Exception e) {
-                        Log.v(null, e.toString());
-                    }
 
                 } else {
                     Toast toast = Toast.makeText(context, "Authentication failed", Toast.LENGTH_SHORT);
