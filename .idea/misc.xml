@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Fit-it-App/app/src/main/res/layout/brand_card_layout.xml" value="0.28177083333333336" />
         <entry key="..\:/AndroidStudioProjects/Fit-it-App/app/src/main/res/layout/brands_fragment.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/Fit-it-App/app/src/main/res/layout/register_fragment.xml" value="0.18802083333333333" />
         <entry key="..\:/AndroidStudioProjects/Fit-it-App/app/src/main/res/layout/specify_size_fragment.xml" value="0.20969202898550723" />
