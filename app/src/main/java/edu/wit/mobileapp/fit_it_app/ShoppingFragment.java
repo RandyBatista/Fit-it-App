@@ -20,7 +20,11 @@ public class ShoppingFragment extends Fragment {
             url = bundle.getString("URL", "");
             name = bundle.getString("NAME", "");
         }
+
         WebView webview = rootView.findViewById(R.id.webView);
+        webview.getSettings().setDomStorageEnabled(true);
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setUseWideViewPort(true);
         webview.loadUrl(url);
         return rootView;
     }
