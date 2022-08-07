@@ -8,52 +8,84 @@
 
         <TextView
             android:id="@+id/recMeasures"
-            android:text="Recommended: "
+            android:text="Recommendations: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/bust"
-            android:text="Bust: "
+            android:id="@+id/shirt"
+            android:text="Shirt: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/bustSize"
+            android:id="@+id/shirtSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"/>
-
+<!--
         <TextView
-            android:id="@+id/waist"
-            android:text="Waist: "
+            android:id="@+id/sweatshirt"
+            android:text="Sweatshirt: "
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/waistSize"
+            android:id="@+id/sweatshirtSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"/>
+            android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/hip"
-            android:text="Hip: "
+            android:id="@+id/shorts"
+            android:text="Shorts: "
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/hipSize"
+            android:id="@+id/shortsSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"/>
 
+        <TextView
+            android:id="@+id/pants"
+            android:text="Pants: "
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/pantsSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/shoes"
+            android:text="Shoes: "
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/shoesSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
+-->
 </LinearLayout>
