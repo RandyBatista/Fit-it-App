@@ -19,6 +19,14 @@ public class ChooseSizeInputFragment extends Fragment {
         Button measureBtn = rootView.findViewById(R.id.measurements_Btn);
         Button sizeBtn = rootView.findViewById(R.id.size_Btn);
 
+        measureBtn.setOnClickListener(v ->{
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentTransaction transaction = fm.beginTransaction();
+            Fragment fragment = new MeasurementsFragment();
+            transaction.replace(R.id.content, fragment);
+            transaction.commit();
+        });
+
         sizeBtn.setOnClickListener(v ->{
             FragmentManager fm = getActivity().getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
