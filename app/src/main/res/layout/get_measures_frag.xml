@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,71 +8,90 @@
     android:background="@color/Back_Color1"
     tools:context=".ChooseSizeInputFragment">
 
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="420dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="7dp"
+        android:background="@color/Color1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/measurements_TV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="420dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="27dp"
+        android:background="@color/Color1"
+        app:layout_constraintStart_toStartOf="@+id/measurements_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/measurements_Btn"
+        app:layout_constraintTop_toTopOf="@+id/size_TV"/>
+
     <TextView
         android:id="@+id/title_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/measurements"
-        android:textColor="@color/black"
-        android:textSize="22sp"
+        android:text="@string/input_type"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.0"/>
 
-    <View
-        android:id="@+id/topDivider"
-        android:layout_width="409dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/Color1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_TV" />
+    <TextView
+        android:id="@+id/measurements_TV"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_measurements"
+        android:gravity="center"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/title_TV"
+        app:layout_constraintEnd_toEndOf="@+id/title_TV"
+        app:layout_constraintTop_toBottomOf="@+id/title_TV" />
+
+    <TextView
+        android:id="@+id/size_TV"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_size"
+        android:gravity="center"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/measurements_Btn"
+        app:layout_constraintEnd_toEndOf="@+id/measurements_Btn"
+        app:layout_constraintTop_toBottomOf="@+id/measurements_Btn" />
 
     <Button
         android:id="@+id/measurements_Btn"
-        android:layout_width="412dp"
-        android:layout_height="312dp"
-        android:layout_marginTop="71dp"
-        android:layout_marginBottom="347dp"
-        android:backgroundTint="@color/Color2"
+        android:layout_width="420dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="24dp"
         android:text="@string/i_know_my_measurements"
-        android:textColor="@color/Color3"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/bottomDivider"
-        android:layout_width="409dp"
-        android:layout_height="29dp"
-        android:background="@color/Color1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topDivider" />
+        android:textColor="@color/Color3"
+        android:backgroundTint="@color/Color2"
+        app:layout_constraintStart_toStartOf="@+id/divider1"
+        app:layout_constraintEnd_toEndOf="@+id/divider1"
+        app:layout_constraintTop_toTopOf="@+id/divider1" />
 
     <Button
         android:id="@+id/size_Btn"
-        android:layout_width="414dp"
-        android:layout_height="312dp"
-        android:layout_marginTop="417dp"
-        android:layout_marginBottom="1dp"
-        android:backgroundTint="@color/Color2"
+        android:layout_width="420dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="24dp"
         android:text="@string/i_know_my_size"
-        android:textColor="@color/Color3"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/Color3"
+        android:backgroundTint="@color/Color2"
+        app:layout_constraintStart_toStartOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toTopOf="@+id/divider2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

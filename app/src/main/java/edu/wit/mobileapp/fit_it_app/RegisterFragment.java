@@ -39,14 +39,7 @@ public class RegisterFragment extends Fragment {
         // Initialize Firebase authentication
         mAuth = FirebaseAuth.getInstance();
 
-        // checks if the user is authenticated, -------------------> has error messages
-        //    - if authenticated, closes the Register activity
-         /*  if(mAuth.getCurrentUser() != null) {
-            finish();
-            return;
-        }*/
-
-        emailET = rootView.findViewById(R.id.Email_ET);
+        emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
 
@@ -64,7 +57,6 @@ public class RegisterFragment extends Fragment {
                 }
 
                 if(password.equals(confirmET.getText().toString())){
-                        try {
                             /* if user is registered correctly with their email and password,
                              data needs to beaded into the database
                              */
@@ -72,7 +64,7 @@ public class RegisterFragment extends Fragment {
                             if (task.isSuccessful()) {
                                 // creates object of type user which will be initialized
                                 // with the data of the new User
-                                User user = new User(email, password);
+                                User user = new User();
                                 // saves data into database
                                 // ones data is saved into database onComplete is executed
                                 FirebaseDatabase.getInstance("https://fit-it-app-eb283-default-rtdb.firebaseio.com/").getReference("users").
@@ -95,9 +87,6 @@ public class RegisterFragment extends Fragment {
                                 Toast toast = Toast.makeText(context, "Authentication Failed", Toast.LENGTH_LONG);
                                 toast.show();
                             }});
-                        } catch (Exception e){
-
-                        }
                 }else{
                     Toast toast = Toast.makeText(context, "Passwords do not match.", Toast.LENGTH_SHORT);
                     toast.show();
