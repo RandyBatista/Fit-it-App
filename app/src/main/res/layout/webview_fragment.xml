@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Back_Color1">
 
-    <com.google.android.material.navigation.NavigationView
+    <WebView
         android:id="@+id/webView"
         android:layout_width="412dp"
         android:layout_height="649dp"
@@ -15,9 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/recMeasures"
-        android:backgroundTint="@color/Color3">
-
-    </com.google.android.material.navigation.NavigationView>
+        android:backgroundTint="@color/Color3"/>
 
     <TextView
         android:id="@+id/pageTitle"
