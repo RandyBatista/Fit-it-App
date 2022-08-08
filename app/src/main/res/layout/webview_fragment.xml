@@ -1,87 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Back_Color1">
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/webView"
-        android:layout_width="412dp"
-        android:layout_height="649dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recMeasures"
-        android:backgroundTint="@color/Color3">
-
-    </com.google.android.material.navigation.NavigationView>
 
     <TextView
         android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search Results"
-        android:textSize="20dp"
+        android:text="@string/search_results"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/Color2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <TextView
-        android:id="@+id/recMeasures"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rec Sizes: "
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="17dp"
-        app:layout_constraintEnd_toEndOf="@+id/waistRecSizeText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteY="49dp" />
+        android:layout_marginTop="15dp"/>
 
     <TextView
-        android:id="@+id/waistRecSizeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/recommendation_TV"
+        android:layout_height="40dp"
+        android:layout_width="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pageTitle"
+        android:textSize="15sp"
+        android:layout_marginStart="6dp"/>
+    <HorizontalScrollView
+        android:id="@+id/recommendations_SV"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@id/recommendation_TV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/recMeasures"
-        app:layout_constraintTop_toBottomOf="@+id/pageTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle"
+        android:layout_marginEnd="6dp">
 
-    <TextView
-        android:id="@+id/bustRecSizeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/waistRecSizeText"
-        app:layout_constraintTop_toBottomOf="@+id/pageTitle" />
+        <ListView
+            android:id="@+id/recommendation_LV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/hipsRecSizeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:layout_marginTop="10dp"
+    </HorizontalScrollView>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="400dp"
+        android:layout_height="642dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/bustRecSizeText"
-        app:layout_constraintTop_toBottomOf="@+id/pageTitle"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recommendations_SV"
+        android:backgroundTint="@color/Color3"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,12 @@
 package edu.wit.mobileapp.fit_it_app;
 
+import android.util.Log;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ShirtSize {
 
@@ -14,6 +20,14 @@ public class ShirtSize {
         this.hip = hip;
     }
 
+    public ShirtSize toInches(){
+        ShirtSize size = this;
+        size.bust = bust.toInches();
+        size.waist = waist.toInches();
+        size.hip = hip.toInches();
+        return size;
+    }
+
     public static ShirtSize getShirtSize(String brand, String sizeLabel, String gender, String group){
         switch (brand){
             case "Nike":
@@ -23,22 +37,47 @@ public class ShirtSize {
                             case "Male":
                                 return ShirtSize.getUniNike().get(sizeLabel);
                             case "Female":
-                                ShirtSize.getWomenNike().get(sizeLabel);
-                            case "Other":
-                                return ShirtSize.getUniNike().get(sizeLabel);
+                                return ShirtSize.getWomenNike().get(sizeLabel);
                             default:
-                                break;
+                                return ShirtSize.getUniNike().get(sizeLabel);
                         }
                     case "Child (7-15)":
                         switch (gender){
                             case "Male":
-                                ShirtSize.getBoyNike().get(sizeLabel);
-                            case "Female":
-                                ShirtSize.getGirlNike().get(sizeLabel);
-                            case "Other":
                                 return ShirtSize.getBoyNike().get(sizeLabel);
+                            case "Female":
+                                return ShirtSize.getGirlNike().get(sizeLabel);
                             default:
-                                break;
+                                return ShirtSize.getBoyNike().get(sizeLabel);
+                        }
+                    default:
+                        break;
+                }
+        }
+        return null;
+    }
+
+    public static HashMap<String, ShirtSize> getShirtSizes(String brand, String gender, String group){
+        switch (brand){
+            case "Nike":
+                switch(group){
+                    case "Adult (16+)":
+                        switch (gender){
+                            case "Male":
+                                return ShirtSize.getUniNike();
+                            case "Female":
+                                return ShirtSize.getWomenNike();
+                            default:
+                                return ShirtSize.getUniNike();
+                        }
+                    case "Child (7-15)":
+                        switch (gender){
+                            case "Male":
+                                return ShirtSize.getBoyNike();
+                            case "Female":
+                                return ShirtSize.getGirlNike();
+                            default:
+                                return ShirtSize.getBoyNike();
                         }
                     default:
                         break;
@@ -48,7 +87,7 @@ public class ShirtSize {
     }
 
     public static HashMap<String, ShirtSize> getUniNike(){
-        HashMap<String, ShirtSize> sizes = new HashMap<>();
+        HashMap<String, ShirtSize> sizes = new LinkedHashMap<>();
         sizes.put("XXS", new ShirtSize(new Size(72, 80), new Size(57, 65), new Size(72, 80)));
         sizes.put("XS", new ShirtSize(new Size(80, 88), new Size(65, 73), new Size(80, 88)));
         sizes.put("S", new ShirtSize(new Size(88, 96), new Size(73, 81), new Size(88, 96)));
@@ -61,7 +100,7 @@ public class ShirtSize {
         return sizes;
     }
     public static HashMap<String, ShirtSize> getWomenNike(){
-        HashMap<String, ShirtSize> sizes = new HashMap<>();
+        HashMap<String, ShirtSize> sizes = new LinkedHashMap<>();
         sizes.put("XXS", new ShirtSize(new Size(70, 76), new Size(54, 60), new Size(78, 84)));
         sizes.put("XS", new ShirtSize(new Size(76, 83), new Size(60, 67), new Size(84, 91)));
         sizes.put("S", new ShirtSize(new Size(83, 90), new Size(67, 74), new Size(91, 98)));
@@ -75,7 +114,7 @@ public class ShirtSize {
         return sizes;
     }
     public static HashMap<String, ShirtSize> getBoyNike(){
-        HashMap<String, ShirtSize> sizes = new HashMap<>();
+        HashMap<String, ShirtSize> sizes = new LinkedHashMap<>();
         sizes.put("XS", new ShirtSize(new Size(64.5, 66), new Size(59.5, 61.5), new Size(68.5, 71)));
         sizes.put("S", new ShirtSize(new Size(66, 69), new Size(61.5, 65), new Size(71, 74.5)));
         sizes.put("S+", new ShirtSize(new Size(70.5, 76.5), new Size(65.5, 70.5), new Size(75.5, 81)));
@@ -88,7 +127,7 @@ public class ShirtSize {
         return sizes;
     }
     public static HashMap<String, ShirtSize> getGirlNike(){
-        HashMap<String, ShirtSize> sizes = new HashMap<>();
+        HashMap<String, ShirtSize> sizes = new LinkedHashMap<>();
         sizes.put("XS", new ShirtSize(new Size(64.5, 68), new Size(59.5, 61), new Size(68.5, 73)));
         sizes.put("S", new ShirtSize(new Size(68, 73), new Size(61, 64), new Size(73, 78.5)));
         sizes.put("S+", new ShirtSize(new Size(73.5, 80.5), new Size(67.5, 74.5), new Size(79.5, 85.5)));
@@ -99,6 +138,40 @@ public class ShirtSize {
         sizes.put("XL", new ShirtSize(new Size(85.5, 92.5), new Size(71.5, 74.5), new Size(88.5, 93.5)));
         sizes.put("XL+", new ShirtSize(new Size(96, 105), new Size(90, 99), new Size(99, 107)));
         return sizes;
+    }
+
+    public static List<String> getShirtSizeKeySet(HashMap<String, ShirtSize> hm){
+        List<String> list = new ArrayList<>();
+        list.add("N/A");
+        for (Map.Entry<String, ShirtSize> entry: hm.entrySet()){
+            list.add(entry.getKey());
+        }
+        return list;
+    }
+
+    public static ArrayList<RecommendationItem> getRecommendations(String brand, Profile p){
+        ArrayList<RecommendationItem> recItems = new ArrayList<>();
+        HashMap<String, ShirtSize> sizes = getShirtSizes(brand, p.gender, p.ageGroup);
+        if(p.standard.toLowerCase().equals("imperial")){
+            for (Map.Entry<String, ShirtSize> entry: sizes.entrySet()){
+                sizes.replace(entry.getKey(), entry.getValue().toInches());
+            }
+        }
+        for (Map.Entry<String, ShirtSize> entry: sizes.entrySet()){
+            ShirtSize size = entry.getValue();
+            Log.v(null, entry.getKey());
+            boolean bustWithin = size.bust.isWithin(p.bust);
+            boolean waistWithin = size.waist.isWithin(p.waist);
+            boolean hipWithin = size.hip.isWithin(p.hip);
+            if(bustWithin || waistWithin || hipWithin){
+                RecommendationItem recItem = new RecommendationItem("Shirt: ",entry.getKey(),"");
+                recItems.add(recItem);
+            }
+        }
+        if(recItems.isEmpty()){
+            RecommendationItem recItem = new RecommendationItem("Shirt: ","","Try Different Age Group");
+        }
+        return recItems;
     }
 
 }

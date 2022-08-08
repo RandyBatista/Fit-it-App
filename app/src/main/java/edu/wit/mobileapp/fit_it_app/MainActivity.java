@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         if(savedInstanceState == null) {
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-            if(User.loggedUser == null){
+            if(User.getLoggedUser() == null){
                 Fragment fragment = new LoginFragment();
                 transaction.replace(R.id.content, fragment);
             }

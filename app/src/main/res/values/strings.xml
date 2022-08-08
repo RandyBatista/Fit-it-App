@@ -20,5 +20,15 @@
     <string name="measurements">Measurements</string>
     <string name="brands">Brands</string>
     <string name="choose_brand">Please choose a brand you would like to shop from.</string>
+    <string name="search_results">Search Results</string>
+    <string name="enter_hip_size">Enter Hip Size</string>
+    <string name="hip">Hip</string>
+    <string name="enter_waist_size">Enter Waist Size</string>
+    <string name="waist">Waist</string>
+    <string name="enter_bust_size">Enter Bust Size</string>
+    <string name="bust">Bust</string>
+    <string name="measurement_type">Measurement Type:</string>
+    <string name="select_gender">Select Gender:</string>
+    <string name="select_age_group">Select Age Group:</string>
 
 </resources>

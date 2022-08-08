@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Back_Color1">
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="?attr/actionModeCloseDrawable"
+        android:backgroundTint="@color/Back_Color1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_TV"
+        app:layout_constraintHorizontal_bias="0"/>
+
+    <TextView
+        android:id="@+id/title_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="General Information"
+        android:textColor="@color/Color2"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_TV"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Username/Email"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/general"
+        app:layout_constraintStart_toStartOf="@+id/general"
+        app:layout_constraintTop_toBottomOf="@id/general" />
+
+    <EditText
+        android:id="@+id/username_ET"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/username"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@id/username" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Gender"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/gender_ET"
+        app:layout_constraintEnd_toEndOf="@id/gender_ET"
+        app:layout_constraintTop_toBottomOf="@id/username_ET" />
+
+    <EditText
+        android:id="@+id/gender_ET"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/username_ET"
+        app:layout_constraintTop_toBottomOf="@id/gender" />
+
+    <TextView
+        android:id="@+id/ageGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age Group"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/ageGroup_ET"
+        app:layout_constraintEnd_toEndOf="@+id/ageGroup_ET"
+        app:layout_constraintTop_toTopOf="@id/gender" />
+
+    <EditText
+        android:id="@+id/ageGroup_ET"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/username_ET"
+        app:layout_constraintTop_toBottomOf="@id/ageGroup" />
+
+    <TextView
+        android:id="@+id/measurements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Measurements"
+        android:textColor="@color/Color2"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ageGroup_ET"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/bust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Bust"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/bust_ET"
+        app:layout_constraintEnd_toEndOf="@id/bust_ET"
+        app:layout_constraintTop_toBottomOf="@id/measurements"/>
+
+    <EditText
+        android:id="@+id/bust_ET"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/username_ET"
+        app:layout_constraintTop_toBottomOf="@id/bust" />
+
+    <TextView
+        android:id="@+id/waist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waist"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/waist_ET"
+        app:layout_constraintEnd_toEndOf="@+id/waist_ET"
+        app:layout_constraintTop_toTopOf="@id/bust" />
+
+    <EditText
+        android:id="@+id/waist_ET"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toEndOf="@id/bust_ET"
+        app:layout_constraintEnd_toStartOf="@id/hips_ET"
+        app:layout_constraintTop_toTopOf="@id/bust_ET"
+        app:layout_constraintBottom_toBottomOf="@id/bust_ET"/>
+
+    <TextView
+        android:id="@+id/hips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hips"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/hips_ET"
+        app:layout_constraintEnd_toEndOf="@+id/hips_ET"
+        app:layout_constraintTop_toTopOf="@id/waist"  />
+
+    <EditText
+        android:id="@+id/hips_ET"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@id/username_ET"
+        app:layout_constraintTop_toTopOf="@id/bust_ET"
+        app:layout_constraintBottom_toBottomOf="@id/bust_ET"/>
+
+    <Button
+        android:id="@+id/edit_btn"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Color3"
+        android:layout_marginTop="20dp"
+        android:text="Edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bust_ET" />
+
+    <Spinner
+        android:id="@+id/profilesSpinner"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_btn" />
+
+    <Button
+        android:id="@+id/createProfile"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:text="Create Profile"
+        android:backgroundTint="@color/Color1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profilesSpinner"
+        app:layout_constraintBottom_toBottomOf="@+id/profilesSpinner"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

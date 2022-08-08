@@ -10,22 +10,25 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class User {
 
-    public static User loggedUser;
+    private static User loggedUser;
 
-    public String UID;
+    String UID;
+    String selectedProfile;
     //String password;
-    HashMap<String,Profile> sizeProfiles;
-    final static HashMap<String, Profile> has = new HashMap<String, Profile>(){{put("Profile 1", new Profile());}};
+    JSONObject sizeProfiles;
 
-    public User(){
-        this(has);
+    public User(String UID){this(UID, "None", new JSONObject());
     }
 
-    public User(HashMap<String,Profile> sizeProfiles){
+    public User(String UID, String selectedProfile, JSONObject sizeProfiles){
+        this.UID = UID;
+        this.selectedProfile = selectedProfile;
         this.sizeProfiles = sizeProfiles;
     }
 
@@ -33,6 +36,6 @@ public class User {
     public static User getLoggedUser(){
         return loggedUser;
     }
-
+    public static void setLoggedUser(User u){loggedUser=u;}
 
 }
