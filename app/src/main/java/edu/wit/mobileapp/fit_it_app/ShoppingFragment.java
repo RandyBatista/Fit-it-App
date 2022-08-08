@@ -134,13 +134,18 @@ public class ShoppingFragment extends Fragment {
                         Log.v(null, e.toString());
                     }
                 }else{
+                    Log.v(null, "Profile Found");
                     //Get Profile from user data
+
+                    Log.v(null, "Loading profileJson to profile");
                     JSONObject profileJSON = u.sizeProfiles.getJSONObject(u.selectedProfile);
                     Profile profile = new Profile();
                     profile.loadJson(profileJSON);
 
+                    Log.v(null, "Setting Recommended Label");
                     recommendedTV.setText("Recommended "+getGroupText(profile.gender, profile.ageGroup) + " Sizes:");
 
+                    Log.v(null, "Getting Recommendations");
                     //Get Recommended Sizes for user
                     ArrayList<RecommendationItem> list = new ArrayList<>();
                     getShirtSizeRecommendations(list, brandName, profile);

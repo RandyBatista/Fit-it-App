@@ -206,8 +206,9 @@ public class MeasurementsFragment extends Fragment{
                 try{
                     String selected = u.selectedProfile;
                     if(selected.equals("None")){
-                        u.sizeProfiles.put("Profile " + (u.sizeProfiles.length() + 1), newProf.toJson());
-                        u.selectedProfile = "Profile " + (u.sizeProfiles.length() + 1);
+                        int size = u.sizeProfiles.length() + 1;
+                        u.sizeProfiles.put("Profile " + size, newProf.toJson());
+                        u.selectedProfile = "Profile " + size;
                     }else{
                         u.sizeProfiles.remove(selected);
                         u.sizeProfiles.put(selected, newProf.toJson());
