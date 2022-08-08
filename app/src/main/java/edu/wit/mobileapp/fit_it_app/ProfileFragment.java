@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class ProfileFragment extends Fragment {
@@ -30,6 +31,12 @@ public class ProfileFragment extends Fragment {
         bust_ET = rootView.findViewById(R.id.bust_ET);
         waist_ET = rootView.findViewById(R.id.waist_ET);
         hips_ET = rootView.findViewById(R.id.hips_ET);
+
+        Button back_btn = rootView.findViewById(R.id.back_btn);
+        Button edit_btn = rootView.findViewById(R.id.edit_btn);
+        Button createProfile = rootView.findViewById(R.id.createProfile);
+
+
 
         return rootView;
     }
