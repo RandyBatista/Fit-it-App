@@ -41,9 +41,9 @@ public class LoginFragment extends Fragment {
         //Get all interactables within layout
         emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
-        Button registerBtn = rootView.findViewById(R.id.register_btn);
-        Button guestBtn = rootView.findViewById(R.id.guest_btn);
-        Button submitBtn = rootView.findViewById(R.id.submit_btn);
+        Button registerBtn = rootView.findViewById(R.id.register_Btn);
+        Button guestBtn = rootView.findViewById(R.id.guest_Btn);
+        Button submitBtn = rootView.findViewById(R.id.submit_Btn);
 
         registerBtn.setOnClickListener(v -> {
             MainActivity.loadFragment(getActivity(), new RegisterFragment(), "Login");
