@@ -6,185 +6,182 @@
     android:background="@color/Back_Color1"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/Back_Color1"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="328dp">
-
-        <GridView
-            android:id="@+id/ListGridView"
-            android:layout_width="415dp"
-            android:layout_height="418dp"
-            android:layout_marginTop="25dp"
-            android:background="@color/Color1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/MeasurementsText"
-            app:layout_constraintVertical_bias="0.358" />
-
-        <GridView
-            android:id="@+id/ListGridView01"
-            android:layout_width="371dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="50dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.26" />
-
-        <GridView
-            android:id="@+id/ListGridView02"
-            android:layout_width="371dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="50dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.46" />
-
-        <GridView
-            android:id="@+id/ListGridView05"
-            android:layout_width="371dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="50dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.66" />
 
         <TextView
             android:id="@+id/MeasurementsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
             android:text="Measurements"
             android:textColor="@color/Color2"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/ListGridView"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"/>
 
         <TextView
+            android:id="@+id/measurementSpinnerLabel_TV"
             android:layout_width="170dp"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:layout_marginRight="40dp"
-            android:text="Measurement Type"
-            android:textSize="18dp"
+            android:text="@string/measurement_type"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/sizeSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/measurementSpinner"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/MeasurementsText" />
-
         <Spinner
-            android:id="@+id/sizeSpinner"
-            android:layout_width="110dp"
+            android:id="@+id/measurementSpinner"
+            android:layout_width="160dp"
             android:layout_height="45dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="20dp"
             android:background="@android:drawable/btn_dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/MeasurementsText" />
-
+            app:layout_constraintStart_toEndOf="@id/measurementSpinnerLabel_TV"
+            app:layout_constraintTop_toTopOf="@id/measurementSpinnerLabel_TV"
+            app:layout_constraintBottom_toBottomOf="@id/measurementSpinnerLabel_TV"/>
         <TextView
-            android:id="@+id/waistText"
-            android:layout_width="wrap_content"
+            android:id="@+id/genderSpinnerLabel_TV"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Waist"
-            android:textSize="20dp"
+            android:text="@string/select_gender"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/measurementSpinner"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ListGridView" />
-
+            app:layout_constraintTop_toTopOf="@id/genderSpinner"
+            app:layout_constraintBottom_toBottomOf="@id/genderSpinner"/>
+        <Spinner
+            android:id="@+id/genderSpinner"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:background="@android:drawable/btn_dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/genderSpinnerLabel_TV"
+            app:layout_constraintTop_toBottomOf="@id/measurementSpinner"/>
         <TextView
-            android:id="@+id/bustText"
-            android:layout_width="wrap_content"
+            android:id="@+id/groupSpinnerLabel_TV"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90px"
-            android:text="Bust"
-            android:textSize="20dp"
+            android:text="@string/select_age_group"
+            android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/groupSpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/groupSpinner"
+            app:layout_constraintBottom_toBottomOf="@id/groupSpinner"/>
+        <Spinner
+            android:id="@+id/groupSpinner"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:background="@android:drawable/btn_dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/groupSpinnerLabel_TV"
+            app:layout_constraintTop_toBottomOf="@id/genderSpinner"/>
+
+        <ScrollView
+            android:id="@+id/measurement_SV"
+            android:layout_width="415dp"
+            android:layout_height="350dp"
+            android:background="@color/Color1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/waistTextBox" />
+            app:layout_constraintTop_toBottomOf="@id/groupSpinner"
+            android:layout_marginBottom="100dp"
+            android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/ListGridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:background="@color/Color1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-
-        <TextView
-            android:id="@+id/hipsText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90px"
-            android:text="Hips"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bustTextBox" />
-
-        <EditText
-            android:id="@+id/waistTextBox"
-            android:layout_width="234dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="50px"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Type Size"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/waistText" />
-
-        <EditText
-            android:id="@+id/bustTextBox"
-            android:layout_width="234dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="50px"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Type Size"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bustText" />
-
-        <EditText
-            android:id="@+id/hipsTextBox"
-            android:layout_width="234dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="50px"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Type Size"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hipsText" />
+                        <TextView
+                            android:id="@+id/bustText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/bust"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        <LinearLayout
+                            android:id="@+id/bust_layout"
+                            android:layout_width="371dp"
+                            android:layout_height="44dp"
+                            android:background="@color/white">
+                                <EditText
+                                    android:id="@+id/bust_ET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:hint="@string/enter_bust_size"
+                                    android:textAlignment="center"
+                                    />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/waistText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/waist"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        <LinearLayout
+                            android:id="@+id/waist_layout"
+                            android:layout_width="371dp"
+                            android:layout_height="44dp"
+                            android:background="@color/white">
+                                <EditText
+                                    android:id="@+id/waist_ET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:hint="@string/enter_waist_size"
+                                    android:textAlignment="center" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/hipText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/hip"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        <LinearLayout
+                            android:id="@+id/hip_layout"
+                            android:layout_width="371dp"
+                            android:layout_height="44dp"
+                            android:background="@color/white">
+                                <EditText
+                                    android:id="@+id/hip_ET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:hint="@string/enter_hip_size"
+                                    android:textAlignment="center" />
+                        </LinearLayout>
+                </LinearLayout>
+        </ScrollView>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/measurement_Submit_btn"
             android:layout_width="184dp"
             android:layout_height="54dp"
-            android:text="Submit"
+            android:text="@string/submit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="50dp"/>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -127,8 +127,14 @@ public class SizeInputFragment extends Fragment{
                     u.sizeProfiles.put("Profile 1", newProf.toJson());
                     u.selectedProfile = "Profile 1";
                 } else {
-                    u.sizeProfiles.put("Profile " + (User.getLoggedUser().sizeProfiles.length() + 1), newProf.toJson());
-                    u.selectedProfile = "Profile " + (User.getLoggedUser().sizeProfiles.length() + 1);
+                    String selected = u.selectedProfile;
+                    if(selected.equals("None")){
+                        u.sizeProfiles.put("Profile " + (User.getLoggedUser().sizeProfiles.length() + 1), newProf.toJson());
+                        u.selectedProfile = "Profile " + (User.getLoggedUser().sizeProfiles.length() + 1);
+                    }else{
+                        u.sizeProfiles.remove(selected);
+                        u.sizeProfiles.put(selected, newProf.toJson());
+                    }
                 }
             }catch(Exception e){
                 Log.v(null, e.toString());
@@ -204,14 +210,14 @@ public class SizeInputFragment extends Fragment{
         return list;
     }
 
-    public List<String> generateGenders(){
+    public static List<String> generateGenders(){
         List<String> list = new ArrayList<>();
         list.add("Male");
         list.add("Female");
         list.add("Other");
         return list;
     }
-    public List<String> generateGroups(){
+    public static List<String> generateGroups(){
         List<String> list = new ArrayList<>();
         list.add("Adult (16+)");
         list.add("Child (7-15)");

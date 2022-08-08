@@ -59,7 +59,7 @@ public class ShoppingFragment extends Fragment {
             ArrayList<RecommendationItem> list = new ArrayList<>();
             getShirtSizeRecommendations(list, name, profile);
             if(list.isEmpty()){
-                list.add(new RecommendationItem("All: ","None","No Recommendations Found"));
+                list.add(new RecommendationItem("All: ","","No Recommendations Found"));
             }
             // create ListItemAdapter
             RecommendationAdapter adapter = new RecommendationAdapter(getContext(), list);
