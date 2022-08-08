@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.multidex.MultiDex;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.multidex.MultiDex;
 
-import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -23,14 +25,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         if(savedInstanceState == null) {
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
-            if(User.getLoggedUser() == null){
-                Fragment fragment = new LoginFragment();
-                transaction.replace(R.id.content, fragment);
-            }
+            Fragment fragment = new LoginFragment();
+            transaction.replace(R.id.content, fragment);
             transaction.commit();
         }
     }
