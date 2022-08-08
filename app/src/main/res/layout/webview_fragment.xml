@@ -10,7 +10,7 @@
         android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search Results"
+        android:text="@string/search_results"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/Color2"
@@ -19,19 +19,27 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"/>
 
-    <HorizontalScrollView
-        android:id="@+id/recommendations"
-        android:layout_width="400dp"
+    <TextView
+        android:id="@+id/recommendation_TV"
         android:layout_height="40dp"
-        android:gravity="center"
+        android:layout_width="100dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pageTitle"
+        android:textSize="15sp"
+        android:layout_marginStart="6dp"/>
+    <HorizontalScrollView
+        android:id="@+id/recommendations_SV"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@id/recommendation_TV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pageTitle">
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle"
+        android:layout_marginEnd="6dp">
 
         <ListView
-            android:id="@+id/ListView1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/recommendation_LV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </HorizontalScrollView>
 
@@ -41,7 +49,7 @@
         android:layout_height="642dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recommendations"
+        app:layout_constraintTop_toBottomOf="@+id/recommendations_SV"
         android:backgroundTint="@color/Color3"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -113,21 +113,29 @@ public class SizeInputFragment extends Fragment{
             String selectedBrand = brandSpinner.getSelectedItem().toString();
             String selectedShirtSize = shirtSpinner.getSelectedItem().toString();
             ShirtSize shirtSize = ShirtSize.getShirtSize(selectedBrand, selectedShirtSize, selectedGender, selectedGroup);
-            Profile newProf = new Profile();
+            String standard;
+            if(selectedCountry.toLowerCase().contains("metric")){
+                standard = "Metric";
+            }else{
+                standard = "Imperial";
+            }
+            Profile newProf = new Profile(standard, selectedGroup, selectedGender, 0,0,0);
             newProf.setShirtSize(shirtSize);
             User u = User.getLoggedUser();
             try {
                 if (u.sizeProfiles.length() == 0) {
                     u.sizeProfiles.put("Profile 1", newProf.toJson());
+                    u.selectedProfile = "Profile 1";
                 } else {
                     u.sizeProfiles.put("Profile " + (User.getLoggedUser().sizeProfiles.length() + 1), newProf.toJson());
+                    u.selectedProfile = "Profile " + (User.getLoggedUser().sizeProfiles.length() + 1);
                 }
             }catch(Exception e){
                 Log.v(null, e.toString());
             }
             User.setLoggedUser(u);
             Log.v(null, u.sizeProfiles.toString());
-            if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            if(!u.UID.equals("None")){
                 FirebaseDatabase.getInstance("https://fit-it-app-eb283-default-rtdb.firebaseio.com/").getReference("users").
                         child(u.UID).child("sizeProfiles").setValue(u.sizeProfiles.toString()).
                         addOnCompleteListener(task1 -> {

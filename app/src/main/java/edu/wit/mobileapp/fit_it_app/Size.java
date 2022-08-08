@@ -1,4 +1,6 @@
 package edu.wit.mobileapp.fit_it_app;
+import android.util.Log;
+
 import java.text.DecimalFormat;
 
 public class Size {
@@ -19,6 +21,11 @@ public class Size {
 
     public double getAverage(){
         return Double.parseDouble(f.format((min + max)/2.0));
+    }
+
+    public boolean isWithin(double val){
+        Log.v(null, max + ">" + val + ">" + min);
+        return (val >= min && val <= max);
     }
 
 }

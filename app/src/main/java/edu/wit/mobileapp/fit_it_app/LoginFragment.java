@@ -90,14 +90,19 @@ public class LoginFragment extends Fragment {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             String profiles = snapshot.child("sizeProfiles").getValue(String.class);
+                            String selected = snapshot.child("selectedProfile").getValue(String.class);
                             String uid = snapshot.child("UID").getValue(String.class);
                             User u;
                             try {
-                                if (profiles == null) {
+                                if(selected == null){
+                                    selected = "None";
+                                }
+                                if (profiles == null || profiles.equals("")) {
                                     u = new User(uid);
                                 } else {
-                                    u = new User(uid, new JSONObject(profiles));
+                                    u = new User(uid, selected, new JSONObject(profiles));
                                 }
+
                                 User.setLoggedUser(u);
                             }catch(Exception e){
                                 Log.v(null, e.toString());

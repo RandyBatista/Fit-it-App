@@ -18,16 +18,17 @@ public class User {
 
     private static User loggedUser;
 
-    public String UID;
+    String UID;
+    String selectedProfile;
     //String password;
     JSONObject sizeProfiles;
 
-    public User(String UID){this(UID, new JSONObject());
+    public User(String UID){this(UID, "None", new JSONObject());
     }
 
-    public User(String UID, JSONObject sizeProfiles){
-
+    public User(String UID, String selectedProfile, JSONObject sizeProfiles){
         this.UID = UID;
+        this.selectedProfile = selectedProfile;
         this.sizeProfiles = sizeProfiles;
     }
 
