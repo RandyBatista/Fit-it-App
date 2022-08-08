@@ -27,9 +27,9 @@ public class ProfileFragment extends Fragment {
         username_ET = rootView.findViewById(R.id.username_ET);
         gender_ET = rootView.findViewById(R.id.gender_ET);
         ageGroup_ET = rootView.findViewById(R.id.ageGroup_ET);
-        bust_ET = rootView.findViewById(R.id.gender_ET);
-        waist_ET = rootView.findViewById(R.id.gender_ET);
-        hips_ET = rootView.findViewById(R.id.gender_ET);
+        bust_ET = rootView.findViewById(R.id.bust_ET);
+        waist_ET = rootView.findViewById(R.id.waist_ET);
+        hips_ET = rootView.findViewById(R.id.hips_ET);
 
         return rootView;
     }
