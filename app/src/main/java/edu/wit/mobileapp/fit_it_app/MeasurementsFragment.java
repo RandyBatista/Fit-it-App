@@ -170,8 +170,9 @@ public class MeasurementsFragment extends Fragment{
                                             u.selectedProfile = "Profile 1";
                                         } else {
                                             if(selected.equals("None")){
-                                                u.sizeProfiles.put("Profile " + (u.sizeProfiles.length() + 1), newProf.toJson());
-                                                u.selectedProfile = "Profile " + (u.sizeProfiles.length() + 1);
+                                                int size = u.sizeProfiles.length() + 1;
+                                                u.sizeProfiles.put("Profile " + (size), newProf.toJson());
+                                                u.selectedProfile = "Profile " + (size);
                                             }else{
                                                 u.sizeProfiles.remove(selected);
                                                 u.sizeProfiles.put(selected, newProf.toJson());
@@ -219,7 +220,7 @@ public class MeasurementsFragment extends Fragment{
                     Fragment fragment;
                     fragment = new BrandsViewFragment();
                     transaction.replace(R.id.content, fragment);
-                    transaction.commit();
+                    transaction.addToBackStack("Measurements").commit();
                 }catch (Exception e){
                     Log.v(null, e.toString());
                 }

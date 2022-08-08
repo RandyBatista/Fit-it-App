@@ -69,7 +69,7 @@ public class RegisterFragment extends Fragment {
                                     FragmentTransaction transaction = fm.beginTransaction();
                                     Fragment fragment = new LoginFragment();
                                     transaction.replace(R.id.content, fragment);
-                                    transaction.commit();
+                                    transaction.addToBackStack("Register").commit();
                                 } catch (Exception e) {
                                     Toast toast = Toast.makeText(context, "Login error has occurred.", Toast.LENGTH_SHORT);
                                     toast.show();
