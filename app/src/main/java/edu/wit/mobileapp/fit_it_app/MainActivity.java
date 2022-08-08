@@ -2,10 +2,12 @@ package edu.wit.mobileapp.fit_it_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.multidex.MultiDex;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -33,4 +35,12 @@ public class MainActivity extends AppCompatActivity {
             transaction.commit();
         }
     }
+
+    public static void loadFragment(FragmentActivity activity, Fragment fragment, String tag){
+        FragmentManager fm = activity.getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.content, fragment);
+        transaction.addToBackStack(tag).commit();
+    }
+
 }

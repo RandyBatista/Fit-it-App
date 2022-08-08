@@ -26,20 +26,12 @@ public class BrandsViewFragment extends Fragment {
                                     int position, long id) {
 
                 Brand brand = adapter.getItem(position);
-                try {
-                    FragmentManager fm = getActivity().getSupportFragmentManager();
-                    FragmentTransaction transaction = fm.beginTransaction();
-                    Fragment fragment;
-                    Bundle bundle = new Bundle();
-                    bundle.putString("URL", brand.url);
-                    bundle.putString("NAME", brand.name);
-                    fragment = new ShoppingFragment();
-                    fragment.setArguments(bundle);
-                    transaction.replace(R.id.content, fragment);
-                    transaction.addToBackStack("Brands").commit();
-                } catch (Exception e) {
-                    Log.v(null, e.toString());
-                }
+                Bundle bundle = new Bundle();
+                bundle.putString("URL", brand.url);
+                bundle.putString("NAME", brand.name);
+                Fragment fragment = new ShoppingFragment();
+                fragment.setArguments(bundle);
+                MainActivity.loadFragment(getActivity(), fragment, "Brands");
 
             }
         });

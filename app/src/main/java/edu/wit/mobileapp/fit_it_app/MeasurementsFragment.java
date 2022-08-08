@@ -182,16 +182,7 @@ public class MeasurementsFragment extends Fragment{
                                         Log.v(null, e.toString());
                                     }
                                             u.saveToDatabase();
-                                            try {
-                                                FragmentManager fm = getActivity().getSupportFragmentManager();
-                                                FragmentTransaction transaction = fm.beginTransaction();
-                                                Fragment fragment;
-                                                fragment = new BrandsViewFragment();
-                                                transaction.replace(R.id.content, fragment);
-                                                transaction.commit();
-                                            } catch (Exception e) {
-                                                Log.v(null, e.toString());
-                                            }
+                                            MainActivity.loadFragment(getActivity(), new BrandsViewFragment(), "Measurements");
 
                                 } catch (Exception e) {
                                     Log.v(null, e.toString());
@@ -215,12 +206,7 @@ public class MeasurementsFragment extends Fragment{
                         u.sizeProfiles.put(selected, newProf.toJson());
                     }
                     User.setGuestUser(u);
-                    FragmentManager fm = getActivity().getSupportFragmentManager();
-                    FragmentTransaction transaction = fm.beginTransaction();
-                    Fragment fragment;
-                    fragment = new BrandsViewFragment();
-                    transaction.replace(R.id.content, fragment);
-                    transaction.addToBackStack("Measurements").commit();
+                    MainActivity.loadFragment(getActivity(), new BrandsViewFragment(), "Measurements");
                 }catch (Exception e){
                     Log.v(null, e.toString());
                 }

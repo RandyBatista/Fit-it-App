@@ -46,21 +46,13 @@ public class LoginFragment extends Fragment {
         Button submitBtn = rootView.findViewById(R.id.submit_btn);
 
         registerBtn.setOnClickListener(v -> {
-            FragmentManager fm = getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            Fragment fragment = new RegisterFragment();
-            transaction.replace(R.id.content, fragment);
-            transaction.addToBackStack("Login").commit();
+            MainActivity.loadFragment(getActivity(), new RegisterFragment(), "Login");
         });
 
         guestBtn.setOnClickListener(v -> {
 
-            FragmentManager fm = getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            Fragment fragment = new ChooseSizeInputFragment();
             User.setGuestUser(new User("None"));
-            transaction.replace(R.id.content, fragment);
-            transaction.addToBackStack("Login").commit();
+            MainActivity.loadFragment(getActivity(), new ChooseSizeInputFragment(), "Login");
         });
 
         submitBtn.setOnClickListener(v -> {
@@ -101,18 +93,13 @@ public class LoginFragment extends Fragment {
                                 Log.v(null, e.toString());
                             }
                             try {
-                                FragmentManager fm = getActivity().getSupportFragmentManager();
-                                FragmentTransaction transaction = fm.beginTransaction();
-                                Fragment fragment;
+
 
                                 if(u.sizeProfiles.length() == 0){
-                                    fragment = new ChooseSizeInputFragment();
+                                    MainActivity.loadFragment(getActivity(), new ChooseSizeInputFragment(), "Login");
                                 }else{
-                                    fragment = new BrandsViewFragment();
+                                    MainActivity.loadFragment(getActivity(), new BrandsViewFragment(), "Login");
                                 }
-
-                                transaction.replace(R.id.content, fragment);
-                                transaction.addToBackStack("Login").commit();
                             } catch (Exception e) {
                                 Log.v(null, e.toString());
                             }
