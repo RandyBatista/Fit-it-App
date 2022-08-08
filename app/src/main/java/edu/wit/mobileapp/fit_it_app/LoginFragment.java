@@ -34,6 +34,10 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.log_in_fragment, container, false);
 
+        if(MainActivity.mAuth.getCurrentUser() != null){
+            MainActivity.mAuth.signOut();
+        }
+
         //Get all interactables within layout
         emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);

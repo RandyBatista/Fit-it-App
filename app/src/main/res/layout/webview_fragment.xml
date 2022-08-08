@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/recommendation_TV"
         android:layout_height="40dp"
-        android:layout_width="100dp"
+        android:layout_width="125dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pageTitle"
         android:textSize="15sp"

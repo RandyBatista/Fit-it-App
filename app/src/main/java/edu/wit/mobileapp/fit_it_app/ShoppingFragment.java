@@ -1,6 +1,5 @@
 package edu.wit.mobileapp.fit_it_app;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -27,11 +25,9 @@ import com.google.firebase.database.ValueEventListener;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ShoppingFragment extends Fragment {
 
-    private User currUser;
     private String brandName = "";
     private String url = "";
 
@@ -138,13 +134,18 @@ public class ShoppingFragment extends Fragment {
                         Log.v(null, e.toString());
                     }
                 }else{
+                    Log.v(null, "Profile Found");
                     //Get Profile from user data
+
+                    Log.v(null, "Loading profileJson to profile");
                     JSONObject profileJSON = u.sizeProfiles.getJSONObject(u.selectedProfile);
                     Profile profile = new Profile();
                     profile.loadJson(profileJSON);
 
+                    Log.v(null, "Setting Recommended Label");
                     recommendedTV.setText("Recommended "+getGroupText(profile.gender, profile.ageGroup) + " Sizes:");
 
+                    Log.v(null, "Getting Recommendations");
                     //Get Recommended Sizes for user
                     ArrayList<RecommendationItem> list = new ArrayList<>();
                     getShirtSizeRecommendations(list, brandName, profile);
@@ -167,12 +168,14 @@ public class ShoppingFragment extends Fragment {
         return rootView;
     }
 
+    //Gets shirt recommendation
     public void getShirtSizeRecommendations(ArrayList<RecommendationItem> list, String brand, Profile p){
 
         ArrayList<RecommendationItem> recItems = ShirtSize.getRecommendations(brand, p);
         list.addAll(recItems);
     }
 
+    //Sets recommended text label to user's associated clothing group
     public String getGroupText(String gender, String ageGroup){
         switch (gender){
             case "Female":
@@ -191,5 +194,4 @@ public class ShoppingFragment extends Fragment {
                 }
         }
     }
-
 }
