@@ -36,7 +36,7 @@ public class BrandsViewFragment extends Fragment {
                     fragment = new ShoppingFragment();
                     fragment.setArguments(bundle);
                     transaction.replace(R.id.content, fragment);
-                    transaction.commit();
+                    transaction.addToBackStack("Brands").commit();
                 } catch (Exception e) {
                     Log.v(null, e.toString());
                 }

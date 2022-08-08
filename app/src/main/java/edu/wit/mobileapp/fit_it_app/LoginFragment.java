@@ -50,7 +50,7 @@ public class LoginFragment extends Fragment {
             FragmentTransaction transaction = fm.beginTransaction();
             Fragment fragment = new RegisterFragment();
             transaction.replace(R.id.content, fragment);
-            transaction.commit();
+            transaction.addToBackStack("Login").commit();
         });
 
         guestBtn.setOnClickListener(v -> {
@@ -60,7 +60,7 @@ public class LoginFragment extends Fragment {
             Fragment fragment = new ChooseSizeInputFragment();
             User.setGuestUser(new User("None"));
             transaction.replace(R.id.content, fragment);
-            transaction.commit();
+            transaction.addToBackStack("Login").commit();
         });
 
         submitBtn.setOnClickListener(v -> {
@@ -112,7 +112,7 @@ public class LoginFragment extends Fragment {
                                 }
 
                                 transaction.replace(R.id.content, fragment);
-                                transaction.commit();
+                                transaction.addToBackStack("Login").commit();
                             } catch (Exception e) {
                                 Log.v(null, e.toString());
                             }

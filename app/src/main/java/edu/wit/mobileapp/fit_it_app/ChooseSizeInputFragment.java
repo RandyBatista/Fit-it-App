@@ -24,7 +24,7 @@ public class ChooseSizeInputFragment extends Fragment {
             FragmentTransaction transaction = fm.beginTransaction();
             Fragment fragment = new MeasurementsFragment();
             transaction.replace(R.id.content, fragment);
-            transaction.commit();
+            transaction.addToBackStack("ChooseSize").commit();
         });
 
         sizeBtn.setOnClickListener(v ->{
@@ -32,7 +32,7 @@ public class ChooseSizeInputFragment extends Fragment {
             FragmentTransaction transaction = fm.beginTransaction();
             Fragment fragment = new SizeInputFragment();
             transaction.replace(R.id.content, fragment);
-            transaction.commit();
+            transaction.addToBackStack("ChooseSize").commit();
         });
 
         return rootView;

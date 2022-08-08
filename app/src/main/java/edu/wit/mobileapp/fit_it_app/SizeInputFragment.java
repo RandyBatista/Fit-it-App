@@ -174,7 +174,7 @@ public class SizeInputFragment extends Fragment{
                                        Fragment fragment;
                                        fragment = new BrandsViewFragment();
                                        transaction.replace(R.id.content, fragment);
-                                       transaction.commit();
+                                       transaction.addToBackStack("SizeInput").commit();
                                    } catch (Exception e) {
                                        Log.v(null, e.toString());
                                    }
@@ -193,8 +193,9 @@ public class SizeInputFragment extends Fragment{
                 try{
                     String selected = u.selectedProfile;
                     if(selected.equals("None")){
-                        u.sizeProfiles.put("Profile " + (u.sizeProfiles.length() + 1), newProf.toJson());
-                        u.selectedProfile = "Profile " + (u.sizeProfiles.length() + 1);
+                        int profLength = u.sizeProfiles.length() + 1;
+                        u.sizeProfiles.put("Profile " + (profLength), newProf.toJson());
+                        u.selectedProfile = "Profile " + (profLength);
                     }else{
                         u.sizeProfiles.remove(selected);
                         u.sizeProfiles.put(selected, newProf.toJson());
@@ -205,7 +206,7 @@ public class SizeInputFragment extends Fragment{
                     Fragment fragment;
                     fragment = new BrandsViewFragment();
                     transaction.replace(R.id.content, fragment);
-                    transaction.commit();
+                    transaction.addToBackStack("SizeInput").commit();
                 }catch (Exception e){
                     Log.v(null, e.toString());
                 }
