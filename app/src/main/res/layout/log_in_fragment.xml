@@ -102,7 +102,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/submit"
+        android:text="@string/login"
         android:backgroundTint="@color/Color1"
         app:layout_constraintStart_toStartOf="@id/password_ET"
         app:layout_constraintEnd_toEndOf="@id/password_ET"

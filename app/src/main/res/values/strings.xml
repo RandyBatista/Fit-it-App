@@ -45,4 +45,6 @@
     <string name="create_profile">Create Profile</string>
     <string name="general_information">General Information</string>
     <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="registration">Registration</string>
 </resources>
