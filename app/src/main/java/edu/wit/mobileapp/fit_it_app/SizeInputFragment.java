@@ -40,16 +40,16 @@ public class SizeInputFragment extends Fragment{
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.specify_size_fragment, container, false);
 
-        Spinner pickCountrySpinner = rootView.findViewById(R.id.pickCountrySpinner);
+        Spinner pickCountrySpinner = rootView.findViewById(R.id.countrySpinner);
         Spinner genderSpinner = rootView.findViewById(R.id.genderSpinner);
         Spinner groupSpinner = rootView.findViewById(R.id.ageGroupSpinner);
         Spinner brandSpinner = rootView.findViewById(R.id.brandSpinner);
-        shirtSpinner = rootView.findViewById(R.id.shirtSpinner);
-        sweatShirtSpinner = rootView.findViewById(R.id.sweatShirtSpinner);
+        shirtSpinner = rootView.findViewById(R.id.shirtsSpinner);
+        sweatShirtSpinner = rootView.findViewById(R.id.sweatShirtsSpinner);
         shortsSpinner = rootView.findViewById(R.id.shortsSpinner);
         pantsSpinner = rootView.findViewById(R.id.pantsSpinner);
         shoesSpinner = rootView.findViewById(R.id.shoesSpinner);
-        Button submit = rootView.findViewById(R.id.submitSizes_btn);
+        Button submitBtn = rootView.findViewById(R.id.submit_Btn);
 
         // Creating adapter for spinner
         ArrayAdapter<String> countryAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, generateCountries());
@@ -112,7 +112,7 @@ public class SizeInputFragment extends Fragment{
             }
         });
 
-        submit.setOnClickListener(v -> {
+        submitBtn.setOnClickListener(v -> {
             String selectedCountry = pickCountrySpinner.getSelectedItem().toString();
             String selectedGender = genderSpinner.getSelectedItem().toString();
             String selectedGroup = groupSpinner.getSelectedItem().toString();
