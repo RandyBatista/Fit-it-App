@@ -37,9 +37,9 @@ public class MeasurementsFragment extends Fragment{
         EditText waist_ET = rootView.findViewById(R.id.waist_ET);
         EditText hip_ET = rootView.findViewById(R.id.hip_ET);
         Spinner measurement_spinner = rootView.findViewById(R.id.measurementSpinner);
-        Spinner groupSpinner = rootView.findViewById(R.id.groupSpinner);
+        Spinner groupSpinner = rootView.findViewById(R.id.ageGroupSpinner);
         Spinner genderSpinner = rootView.findViewById(R.id.genderSpinner);
-        Button submitBtn = rootView.findViewById(R.id.measurement_Submit_btn);
+        Button submitBtn = rootView.findViewById(R.id.submit_Btn);
 
         List<String> list = new ArrayList<>();
         list.add("Imperial");
