@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -40,6 +41,12 @@ public class MeasurementsFragment extends Fragment{
         Spinner groupSpinner = rootView.findViewById(R.id.ageGroupSpinner);
         Spinner genderSpinner = rootView.findViewById(R.id.genderSpinner);
         Button submitBtn = rootView.findViewById(R.id.submit_Btn);
+
+        ImageButton back_btn = rootView.findViewById(R.id.back_Btn);
+
+        back_btn.setOnClickListener(v->{
+            getActivity().onBackPressed();
+        });
 
         List<String> list = new ArrayList<>();
         list.add("Imperial");
