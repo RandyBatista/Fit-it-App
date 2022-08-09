@@ -19,6 +19,16 @@
         app:layout_constraintTop_toTopOf="@id/title_TV"
         app:layout_constraintHorizontal_bias="0" />
 
+    <ImageButton
+        android:id="@+id/prof_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_accessibility_24"
+        android:tooltipText="Profile"
+        android:backgroundTint="@color/Back_Color1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_TV" />
+
     <TextView
         android:id="@+id/title_TV"
         android:layout_width="wrap_content"
@@ -49,10 +59,10 @@
 
     <GridView
         android:id="@+id/brands_GV"
-        android:layout_marginTop="95dp"
-        android:layout_width="400dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:numColumns="3"
+        android:layout_margin="6dp"
         android:horizontalSpacing="6dp"
         android:verticalSpacing="6dp"
         app:layout_constraintStart_toStartOf="parent"

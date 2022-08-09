@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -18,6 +19,12 @@ public class ChooseSizeInputFragment extends Fragment {
 
         Button measureBtn = rootView.findViewById(R.id.measurements_Btn);
         Button sizeBtn = rootView.findViewById(R.id.size_Btn);
+
+        ImageButton back_btn = rootView.findViewById(R.id.back_Btn);
+
+        back_btn.setOnClickListener(v->{
+            getActivity().onBackPressed();
+        });
 
         measureBtn.setOnClickListener(v ->{
             MainActivity.loadFragment(getActivity(), new MeasurementsFragment(), "ChooseSize");

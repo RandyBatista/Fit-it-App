@@ -7,7 +7,7 @@
     android:background="@color/Back_Color1">
 
     <ImageButton
-        android:id="@+id/back_btn"
+        android:id="@+id/back_Btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="?attr/actionModeCloseDrawable"
@@ -67,6 +67,7 @@
         app:layout_constraintStart_toStartOf="@id/username"
         app:layout_constraintEnd_toEndOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@id/username"
+        android:textAlignment="center"
         android:focusable="false"
         android:clickable="false"/>
 
@@ -89,6 +90,7 @@
         android:layout_marginTop="5dp"
         android:autofillHints=""
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@id/username_ET"
         app:layout_constraintTop_toBottomOf="@id/gender"
@@ -113,6 +115,7 @@
         android:layout_marginTop="5dp"
         android:autofillHints=""
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/username_ET"
         app:layout_constraintTop_toBottomOf="@id/ageGroup"
@@ -151,6 +154,7 @@
         android:layout_marginTop="5dp"
         android:autofillHints=""
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@id/username_ET"
         app:layout_constraintTop_toBottomOf="@id/bust"
@@ -174,6 +178,7 @@
         android:layout_height="50dp"
         android:autofillHints=""
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toEndOf="@id/bust_ET"
         app:layout_constraintEnd_toStartOf="@id/hips_ET"
@@ -199,6 +204,7 @@
         android:layout_height="50dp"
         android:autofillHints=""
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@id/username_ET"
         app:layout_constraintTop_toTopOf="@id/bust_ET"
@@ -207,7 +213,7 @@
         android:clickable="false"/>
 
     <Button
-        android:id="@+id/edit_btn"
+        android:id="@+id/edit_Btn"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/Color3"
@@ -226,10 +232,10 @@
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_Btn" />
 
     <Button
-        android:id="@+id/createProfile"
+        android:id="@+id/createProfile_btn"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="22dp"

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -50,6 +51,12 @@ public class SizeInputFragment extends Fragment{
         pantsSpinner = rootView.findViewById(R.id.pantsSpinner);
         shoesSpinner = rootView.findViewById(R.id.shoesSpinner);
         Button submitBtn = rootView.findViewById(R.id.submit_Btn);
+
+        ImageButton back_btn = rootView.findViewById(R.id.back_Btn);
+
+        back_btn.setOnClickListener(v->{
+            getActivity().onBackPressed();
+        });
 
         // Creating adapter for spinner
         ArrayAdapter<String> countryAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, generateCountries());

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +39,12 @@ public class RegisterFragment extends Fragment {
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
 
         Button submitBtn = rootView.findViewById(R.id.submit_Btn);
+
+        ImageButton back_btn = rootView.findViewById(R.id.back_Btn);
+
+        back_btn.setOnClickListener(v->{
+            getActivity().onBackPressed();
+        });
 
         submitBtn.setOnClickListener(v -> {
                 Context context = requireContext();

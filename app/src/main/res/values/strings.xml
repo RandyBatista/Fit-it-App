@@ -44,4 +44,5 @@
     <string name="edit">Edit</string>
     <string name="create_profile">Create Profile</string>
     <string name="general_information">General Information</string>
+    <string name="email">Email</string>
 </resources>

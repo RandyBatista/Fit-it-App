@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,6 +38,13 @@ public class ShoppingFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.webview_fragment, container, false);
         TextView recommendedTV = rootView.findViewById(R.id.recommendation_TV);
+
+        ImageButton back_btn = rootView.findViewById(R.id.back_Btn);
+
+        back_btn.setOnClickListener(v->{
+            getActivity().onBackPressed();
+        });
+
         try {
             //Get bundle information
             Bundle bundle = this.getArguments();
