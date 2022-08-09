@@ -66,7 +66,9 @@
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@id/username"
         app:layout_constraintEnd_toEndOf="@+id/username"
-        app:layout_constraintTop_toBottomOf="@id/username" />
+        app:layout_constraintTop_toBottomOf="@id/username"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <TextView
         android:id="@+id/gender"
@@ -89,7 +91,9 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@id/username_ET"
-        app:layout_constraintTop_toBottomOf="@id/gender" />
+        app:layout_constraintTop_toBottomOf="@id/gender"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <TextView
         android:id="@+id/ageGroup"
@@ -111,7 +115,9 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/username_ET"
-        app:layout_constraintTop_toBottomOf="@id/ageGroup" />
+        app:layout_constraintTop_toBottomOf="@id/ageGroup"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <TextView
         android:id="@+id/measurements"
@@ -147,7 +153,9 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@id/username_ET"
-        app:layout_constraintTop_toBottomOf="@id/bust" />
+        app:layout_constraintTop_toBottomOf="@id/bust"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <TextView
         android:id="@+id/waist"
@@ -170,7 +178,9 @@
         app:layout_constraintStart_toEndOf="@id/bust_ET"
         app:layout_constraintEnd_toStartOf="@id/hips_ET"
         app:layout_constraintTop_toTopOf="@id/bust_ET"
-        app:layout_constraintBottom_toBottomOf="@id/bust_ET"/>
+        app:layout_constraintBottom_toBottomOf="@id/bust_ET"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <TextView
         android:id="@+id/hips"
@@ -192,7 +202,9 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@id/username_ET"
         app:layout_constraintTop_toTopOf="@id/bust_ET"
-        app:layout_constraintBottom_toBottomOf="@id/bust_ET"/>
+        app:layout_constraintBottom_toBottomOf="@id/bust_ET"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <Button
         android:id="@+id/edit_btn"
@@ -221,7 +233,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="22dp"
-        android:text="Create Profile"
+        android:text="New Profile"
         android:backgroundTint="@color/Color1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profilesSpinner"
