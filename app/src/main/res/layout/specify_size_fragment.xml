@@ -1,292 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/Back_Color1">
+
+    <ImageButton
+        android:id="@+id/back_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="?attr/actionModeCloseDrawable"
+        android:backgroundTint="@color/Back_Color1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_TV"
+        app:layout_constraintHorizontal_bias="0"/>
+
+    <TextView
+        android:id="@+id/title_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="@string/sizes"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.0"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
->
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/title_TV">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/pickCountrySpinner"
-        android:layout_width="388dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titlePageText" />
+            <Spinner
+                android:id="@+id/countrySpinner"
+                android:layout_width="380dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/country_TV" />
 
-    <TextView
-        android:id="@+id/titlePageText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose Size Country Standard"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/Color2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"/>
+            <TextView
+                android:id="@+id/country_TV"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/country_standard"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color3"
+                android:background="@color/Color2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/brandText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Brand"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/Color2"
-        android:layout_marginRight="230dp"
-        app:layout_constraintEnd_toEndOf="@+id/brandSpinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageGroupSpinner"
-        android:layout_marginTop="45dp"/>
+            <TextView
+                android:id="@+id/sizeRef_TV"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/size_ref"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color3"
+                android:background="@color/Color2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/countrySpinner" />
 
-    <Spinner
-        android:id="@+id/brandSpinner"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="225dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageGroupSpinner" />
+            <TextView
+                android:id="@+id/gender_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/gender"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@id/countrySpinner"
+                app:layout_constraintEnd_toStartOf="@id/genderSpinner"
+                app:layout_constraintTop_toTopOf="@id/genderSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/genderSpinner"
+                app:layout_constraintHorizontal_bias="0.15"/>
 
-    <TextView
-        android:id="@+id/sizeGroupText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Size Group"
-        android:textColor="@color/Color2"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pickCountrySpinner"
-        android:layout_marginTop="40dp"/>
+            <TextView
+                android:id="@+id/ageGroup_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/age_group"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@+id/gender_TV"
+                app:layout_constraintEnd_toEndOf="@+id/gender_TV"
+                app:layout_constraintTop_toTopOf="@id/ageGroupSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/ageGroupSpinner"
+                app:layout_constraintHorizontal_bias="0.15"/>
 
-    <TextView
-        android:id="@+id/genderText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender"
-        android:layout_marginTop="17dp"
-        android:layout_marginRight="240dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/Color2"
-        app:layout_constraintEnd_toEndOf="@+id/genderSpinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sizeGroupText" />
+            <TextView
+                android:id="@+id/brand_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/brand"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@+id/ageGroup_TV"
+                app:layout_constraintEnd_toEndOf="@+id/ageGroup_TV"
+                app:layout_constraintTop_toTopOf="@id/brandSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/brandSpinner"
+                app:layout_constraintHorizontal_bias="0.15"/>
 
-    <Spinner
-        android:id="@+id/genderSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="190dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/genderText"
-        app:layout_constraintTop_toBottomOf="@id/sizeGroupText" />
+            <Spinner
+                android:id="@+id/genderSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintEnd_toEndOf="@id/countrySpinner"
+                app:layout_constraintTop_toBottomOf="@id/sizeRef_TV" />
 
-    <TextView
-        android:id="@+id/ageGroupText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="230dp"
-        android:text="Age Group"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/Color2"
-        app:layout_constraintEnd_toEndOf="@+id/ageGroupSpinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genderText"/>
+            <Spinner
+                android:id="@+id/ageGroupSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="@+id/genderSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/genderSpinner"
+                app:layout_constraintTop_toBottomOf="@id/genderSpinner"
+                app:layout_constraintHorizontal_bias="0.8"/>
 
-    <Spinner
-        android:id="@+id/ageGroupSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="200dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ageGroupText"
-        app:layout_constraintTop_toBottomOf="@+id/genderSpinner"/>
+            <Spinner
+                android:id="@+id/brandSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="@+id/ageGroupSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/ageGroupSpinner"
+                app:layout_constraintTop_toBottomOf="@id/ageGroupSpinner"
+                app:layout_constraintHorizontal_bias="0.8"/>
 
-    <TextView
-        android:id="@+id/chooseSizeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose Sizes"
-        android:textColor="@color/Color2"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/brandText"
-        android:layout_marginTop="40dp"
-        />
+            <TextView
+                android:id="@+id/chooseSizeText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/clothing_sizes"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color3"
+                android:background="@color/Color2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/brandSpinner" />
 
-    <TextView
-        android:id="@+id/shirtText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shirt Size"
-        android:textColor="@color/Color2"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/chooseSizeText"
-        app:layout_constraintTop_toBottomOf="@id/chooseSizeText"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="100dp"/>
+            <TextView
+                android:id="@+id/shirts_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/shirts"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@id/countrySpinner"
+                app:layout_constraintEnd_toStartOf="@id/shirtsSpinner"
+                app:layout_constraintTop_toTopOf="@id/shirtsSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/shirtsSpinner"
+                app:layout_constraintHorizontal_bias="0.15"/>
 
-    <TextView
-        android:id="@+id/sweatShirtText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sweat Shirts"
-        android:textColor="@color/Color2"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/shirtText"
-        app:layout_constraintEnd_toEndOf="@id/shirtText"
-        app:layout_constraintTop_toBottomOf="@id/shirtText"
-        android:layout_marginTop="30dp"
-        />
-    <TextView
-        android:id="@+id/shortsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shorts"
-        android:textColor="@color/Color2"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/sweatShirtText"
-        app:layout_constraintEnd_toEndOf="@id/sweatShirtText"
-        app:layout_constraintTop_toBottomOf="@id/sweatShirtText"
-        android:layout_marginTop="30dp"/>
+            <TextView
+                android:id="@+id/sweatShirts_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/sweat_shirts"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@id/shirts_TV"
+                app:layout_constraintEnd_toEndOf="@id/shirts_TV"
+                app:layout_constraintTop_toTopOf="@id/sweatShirtsSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/sweatShirtsSpinner"
+                app:layout_constraintHorizontal_bias="0.15" />
 
-    <TextView
-        android:id="@+id/pantsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pants"
-        android:textColor="@color/Color2"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/shortsText"
-        app:layout_constraintEnd_toEndOf="@id/shortsText"
-        app:layout_constraintTop_toBottomOf="@id/shortsText"
-        android:layout_marginTop="30dp" />
+            <TextView
+                android:id="@+id/shorts_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/shorts"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@id/sweatShirts_TV"
+                app:layout_constraintEnd_toEndOf="@id/sweatShirts_TV"
+                app:layout_constraintTop_toTopOf="@id/shortsSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/shortsSpinner"
+                app:layout_constraintHorizontal_bias="0.15"/>
 
+            <TextView
+                android:id="@+id/pants_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/pants"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@id/shorts_TV"
+                app:layout_constraintEnd_toEndOf="@id/shorts_TV"
+                app:layout_constraintTop_toTopOf="@id/pantsSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/pantsSpinner"
+                app:layout_constraintHorizontal_bias="0.15" />
 
+            <TextView
+                android:id="@+id/shoes_TV"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="@string/shoes"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/Color2"
+                android:background="@drawable/shape"
+                app:layout_constraintStart_toStartOf="@id/pants_TV"
+                app:layout_constraintEnd_toEndOf="@id/pants_TV"
+                app:layout_constraintTop_toTopOf="@id/shoesSpinner"
+                app:layout_constraintBottom_toBottomOf="@id/shoesSpinner"
+                app:layout_constraintHorizontal_bias="0.15" />
 
-    <TextView
-        android:id="@+id/shoesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shoes"
-        android:textColor="@color/Color2"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/pantsText"
-        app:layout_constraintEnd_toEndOf="@id/pantsText"
-        app:layout_constraintTop_toBottomOf="@id/pantsText"
-        android:layout_marginTop="30dp" />
+            <Spinner
+                android:id="@+id/shirtsSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintEnd_toEndOf="@id/countrySpinner"
+                app:layout_constraintTop_toBottomOf="@id/chooseSizeText"/>
 
-    <Spinner
-        android:id="@+id/shirtSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="@id/chooseSizeText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chooseSizeText"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"/>
+            <Spinner
+                android:id="@+id/sweatShirtsSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="@+id/shirtsSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/shirtsSpinner"
+                app:layout_constraintTop_toBottomOf="@id/shirtsSpinner"
+                app:layout_constraintHorizontal_bias="0.8" />
 
-    <Spinner
-        android:id="@+id/sweatShirtSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="@id/shirtSpinner"
-        app:layout_constraintEnd_toEndOf="@id/shirtSpinner"
-        app:layout_constraintTop_toBottomOf="@id/shirtSpinner"
-        android:layout_marginTop="10dp"/>
+            <Spinner
+                android:id="@+id/shortsSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="@+id/sweatShirtsSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/sweatShirtsSpinner"
+                app:layout_constraintTop_toBottomOf="@id/sweatShirtsSpinner"
+                app:layout_constraintHorizontal_bias="0.8" />
 
-    <Spinner
-        android:id="@+id/shortsSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="@id/sweatShirtSpinner"
-        app:layout_constraintEnd_toEndOf="@id/sweatShirtSpinner"
-        app:layout_constraintTop_toBottomOf="@id/sweatShirtSpinner"
-        android:layout_marginTop="10dp" />
+            <Spinner
+                android:id="@+id/pantsSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="@+id/shortsSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/shortsSpinner"
+                app:layout_constraintTop_toBottomOf="@id/shortsSpinner"
+                app:layout_constraintHorizontal_bias="0.8"  />
 
-    <Spinner
-        android:id="@+id/pantsSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="@id/shortsSpinner"
-        app:layout_constraintEnd_toEndOf="@id/shortsSpinner"
-        app:layout_constraintTop_toBottomOf="@id/shortsSpinner"
-        android:layout_marginTop="10dp"  />
+            <Spinner
+                android:id="@+id/shoesSpinner"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/Color2"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="@+id/pantsSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/pantsSpinner"
+                app:layout_constraintTop_toBottomOf="@id/pantsSpinner"
+                app:layout_constraintHorizontal_bias="0.8" />
 
-    <Spinner
-        android:id="@+id/shoesSpinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:outlineSpotShadowColor="@color/Color2"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="@id/pantsSpinner"
-        app:layout_constraintStart_toStartOf="@id/pantsSpinner"
-        app:layout_constraintTop_toBottomOf="@id/pantsSpinner"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:id="@+id/submitSizes_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shoesText"
-        android:layout_marginTop="30dp"/>
+            <Button
+                android:id="@+id/submit_Btn"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/submit"
+                android:textColor="@color/Color3"
+                android:backgroundTint="@color/Color2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoesSpinner" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

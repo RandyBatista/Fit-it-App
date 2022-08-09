@@ -24,9 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterFragment extends Fragment {
 
-    // Firebase authentication object
-    private FirebaseAuth mAuth;
-
     EditText emailET;
     EditText passwordET;
     EditText confirmET;
@@ -36,14 +33,11 @@ public class RegisterFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.register_fragment, container, false);
 
-        // Initialize Firebase authentication
-        mAuth = FirebaseAuth.getInstance();
-
         emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
 
-        Button submitBtn = rootView.findViewById(R.id.submit_btn);
+        Button submitBtn = rootView.findViewById(R.id.submit_Btn);
 
         submitBtn.setOnClickListener(v -> {
                 Context context = requireContext();
@@ -60,29 +54,26 @@ public class RegisterFragment extends Fragment {
                             /* if user is registered correctly with their email and password,
                              data needs to beaded into the database
                              */
-                            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), task -> {
+                    MainActivity.mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), task -> {
                             if (task.isSuccessful()) {
                                 // creates object of type user which will be initialized
                                 // with the data of the new User
-                                User user = new User(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                User user = new User(MainActivity.mAuth.getCurrentUser().getUid(), email);
                                 // saves data into database
                                 // ones data is saved into database onComplete is executed
-                                FirebaseDatabase.getInstance("https://fit-it-app-eb283-default-rtdb.firebaseio.com/").getReference("users").
-                                        child(FirebaseAuth.getInstance().getCurrentUser().getUid()).
-                                        setValue(user).addOnCompleteListener(task1 -> {
-                                            try {
-                                                Toast toast = Toast.makeText(context, "Successfully registered, please log in.", Toast.LENGTH_LONG);
-                                                toast.show();
-                                                FragmentManager fm = getActivity().getSupportFragmentManager();
-                                                FragmentTransaction transaction = fm.beginTransaction();
-                                                Fragment fragment = new LoginFragment();
-                                                transaction.replace(R.id.content, fragment);
-                                                transaction.commit();
-                                            } catch (Exception e) {
-                                                Toast toast = Toast.makeText(context, "Login error has occurred.", Toast.LENGTH_SHORT);
-                                                toast.show();
-                                            }
-                                        });
+                                user.saveToDatabase();
+                                try {
+                                    Toast toast = Toast.makeText(context, "Successfully registered, please log in.", Toast.LENGTH_LONG);
+                                    toast.show();
+                                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                                    FragmentTransaction transaction = fm.beginTransaction();
+                                    Fragment fragment = new LoginFragment();
+                                    transaction.replace(R.id.content, fragment);
+                                    transaction.addToBackStack("Register").commit();
+                                } catch (Exception e) {
+                                    Toast toast = Toast.makeText(context, "Login error has occurred.", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
                             } else {
                                 Toast toast = Toast.makeText(context, "Authentication Failed", Toast.LENGTH_LONG);
                                 toast.show();

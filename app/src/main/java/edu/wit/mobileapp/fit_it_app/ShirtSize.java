@@ -157,19 +157,28 @@ public class ShirtSize {
                 sizes.replace(entry.getKey(), entry.getValue().toInches());
             }
         }
+        String recSizes = "";
         for (Map.Entry<String, ShirtSize> entry: sizes.entrySet()){
             ShirtSize size = entry.getValue();
             Log.v(null, entry.getKey());
             boolean bustWithin = size.bust.isWithin(p.bust);
+            Log.v(null, ""+bustWithin);
             boolean waistWithin = size.waist.isWithin(p.waist);
+            Log.v(null, ""+waistWithin);
             boolean hipWithin = size.hip.isWithin(p.hip);
+            Log.v(null, ""+hipWithin);
             if(bustWithin || waistWithin || hipWithin){
-                RecommendationItem recItem = new RecommendationItem("Shirt: ",entry.getKey(),"");
-                recItems.add(recItem);
+                Log.v(null,"Adding: "+entry.getKey());
+                if(!recSizes.equals("")){
+                    recSizes += ", ";
+                }
+                recSizes += "(" + entry.getKey() + ")";
             }
         }
-        if(recItems.isEmpty()){
-            RecommendationItem recItem = new RecommendationItem("Shirt: ","","Try Different Age Group");
+        if(!recSizes.equals("")){
+            recItems.add(new RecommendationItem("Shirt: ",recSizes,""));
+        }else{
+            recItems.add( new RecommendationItem("Shirt: ","","No Match"));
         }
         return recItems;
     }

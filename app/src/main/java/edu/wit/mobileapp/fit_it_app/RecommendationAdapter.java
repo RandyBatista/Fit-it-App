@@ -27,7 +27,7 @@ public class RecommendationAdapter extends ArrayAdapter<RecommendationItem> {
         TextView sizeType = listitemView.findViewById(R.id.type_TV);
         TextView sizeLabel = listitemView.findViewById(R.id.size_TV);
         sizeType.setText(recItem.type);
-        sizeLabel.setText("(" + recItem.size + recItem.description + ")");
+        sizeLabel.setText(recItem.size + recItem.description);
         return listitemView;
     }
 

@@ -15,10 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,12 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONObject;
 
-import java.util.HashMap;
-
 public class LoginFragment extends Fragment {
-
-    // Firebase authentication object
-    private FirebaseAuth mAuth;
 
     EditText emailET;
     EditText passwordET;
@@ -43,32 +34,25 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.log_in_fragment, container, false);
 
-        // Initialize Firebase authentication
-        mAuth = FirebaseAuth.getInstance();
+        if(MainActivity.mAuth.getCurrentUser() != null){
+            MainActivity.mAuth.signOut();
+        }
 
         //Get all interactables within layout
         emailET = rootView.findViewById(R.id.email_ET);
         passwordET = rootView.findViewById(R.id.password_ET);
-        Button registerBtn = rootView.findViewById(R.id.register_btn);
-        Button guestBtn = rootView.findViewById(R.id.guest_btn);
-        Button submitBtn = rootView.findViewById(R.id.submit_btn);
+        Button registerBtn = rootView.findViewById(R.id.register_Btn);
+        Button guestBtn = rootView.findViewById(R.id.guest_Btn);
+        Button submitBtn = rootView.findViewById(R.id.submit_Btn);
 
         registerBtn.setOnClickListener(v -> {
-            FragmentManager fm = getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            Fragment fragment = new RegisterFragment();
-            transaction.replace(R.id.content, fragment);
-            transaction.commit();
+            MainActivity.loadFragment(getActivity(), new RegisterFragment(), "Login");
         });
 
         guestBtn.setOnClickListener(v -> {
 
-            FragmentManager fm = getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            User.setLoggedUser(new User("None"));
-            Fragment fragment = new ChooseSizeInputFragment();
-            transaction.replace(R.id.content, fragment);
-            transaction.commit();
+            User.setGuestUser(new User("None"));
+            MainActivity.loadFragment(getActivity(), new ChooseSizeInputFragment(), "Login");
         });
 
         submitBtn.setOnClickListener(v -> {
@@ -83,16 +67,18 @@ public class LoginFragment extends Fragment {
                 return;
             }
             try{
-            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), task -> {
-                FirebaseUser user = mAuth.getCurrentUser();
+                MainActivity.mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), task -> {
+                FirebaseUser user = MainActivity.mAuth.getCurrentUser();
                 if (user != null) {
-                    FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+                    FirebaseDatabase.getInstance().getReference("users").child(user.getUid()).
+                            addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             String profiles = snapshot.child("sizeProfiles").getValue(String.class);
                             String selected = snapshot.child("selectedProfile").getValue(String.class);
-                            String uid = snapshot.child("UID").getValue(String.class);
-                            User u;
+                            String email = snapshot.child("email").getValue(String.class);
+                            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            User u = new User("None");
                             try {
                                 if(selected == null){
                                     selected = "None";
@@ -100,26 +86,20 @@ public class LoginFragment extends Fragment {
                                 if (profiles == null || profiles.equals("")) {
                                     u = new User(uid);
                                 } else {
-                                    u = new User(uid, selected, new JSONObject(profiles));
+                                    u = new User(uid, email, selected, new JSONObject(profiles));
                                 }
 
-                                User.setLoggedUser(u);
                             }catch(Exception e){
                                 Log.v(null, e.toString());
                             }
                             try {
-                                FragmentManager fm = getActivity().getSupportFragmentManager();
-                                FragmentTransaction transaction = fm.beginTransaction();
-                                Fragment fragment;
 
-                                if(User.getLoggedUser().sizeProfiles.length() == 0){
-                                    fragment = new ChooseSizeInputFragment();
+
+                                if(u.sizeProfiles.length() == 0){
+                                    MainActivity.loadFragment(getActivity(), new ChooseSizeInputFragment(), "Login");
                                 }else{
-                                    fragment = new BrandsViewFragment();
+                                    MainActivity.loadFragment(getActivity(), new BrandsViewFragment(), "Login");
                                 }
-
-                                transaction.replace(R.id.content, fragment);
-                                transaction.commit();
                             } catch (Exception e) {
                                 Log.v(null, e.toString());
                             }
