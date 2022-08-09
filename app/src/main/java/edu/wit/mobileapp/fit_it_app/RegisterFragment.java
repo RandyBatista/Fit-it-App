@@ -37,7 +37,7 @@ public class RegisterFragment extends Fragment {
         passwordET = rootView.findViewById(R.id.password_ET);
         confirmET = rootView.findViewById(R.id.confirmPassword_ET);
 
-        Button submitBtn = rootView.findViewById(R.id.submit_btn);
+        Button submitBtn = rootView.findViewById(R.id.submit_Btn);
 
         submitBtn.setOnClickListener(v -> {
                 Context context = requireContext();
