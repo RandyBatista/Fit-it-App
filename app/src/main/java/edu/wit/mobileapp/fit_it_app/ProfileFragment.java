@@ -12,12 +12,12 @@ import android.widget.EditText;
 
 public class ProfileFragment extends Fragment {
 
-    EditText username_ET;
-    EditText gender_ET;
-    EditText ageGroup_ET;
-    EditText bust_ET;
-    EditText waist_ET;
-    EditText hips_ET;
+    EditText usernameTV;
+    EditText genderTV;
+    EditText ageGroupTV;
+    EditText bustTV;
+    EditText waistTV;
+    EditText hipsTV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,17 +25,16 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.profile_fragment, container, false);
 
-        username_ET = rootView.findViewById(R.id.username_ET);
-        gender_ET = rootView.findViewById(R.id.gender_ET);
-        ageGroup_ET = rootView.findViewById(R.id.ageGroup_ET);
-        bust_ET = rootView.findViewById(R.id.bust_ET);
-        waist_ET = rootView.findViewById(R.id.waist_ET);
-        hips_ET = rootView.findViewById(R.id.hips_ET);
+        usernameTV = rootView.findViewById(R.id.username_TV);
+        genderTV = rootView.findViewById(R.id.gender_TV);
+        ageGroupTV = rootView.findViewById(R.id.ageGroup_TV);
+        bustTV = rootView.findViewById(R.id.bust_TV);
+        waistTV = rootView.findViewById(R.id.waist_TV);
+        hipsTV = rootView.findViewById(R.id.hips_TV);
 
-        Button back_btn = rootView.findViewById(R.id.back_btn);
-        Button edit_btn = rootView.findViewById(R.id.edit_btn);
-        Button createProfile = rootView.findViewById(R.id.createProfile);
-
+        Button back_btn = rootView.findViewById(R.id.back_Btn);
+        Button edit_btn = rootView.findViewById(R.id.edit_Btn);
+        Button createProfile = rootView.findViewById(R.id.createProfile_Btn);
 
 
         return rootView;
